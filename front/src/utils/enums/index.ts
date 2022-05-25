@@ -1,0 +1,52 @@
+export enum ROLES_ENUM {
+  OWNER = 'OWNER',
+  EXPERT = 'EXPERT',
+  STUDENT = 'STUDENT',
+  SUPPORT = 'SUPPORT',
+}
+
+export enum QUESTIONNAIRE_STATUSES_ENUM {
+  NOTSENT = 'NOTSENT',
+  NOTVERIFIED = 'NOTVERIFIED',
+  PROCESS = 'PROCESS',
+  VERIFIED = 'VERIFIED',
+  SENDED = 'SENDED',
+  process = 'process',
+  ready = 'ready',
+};
+
+export enum QUESTIONNAIRE_VERSIONS_ENUM {
+  OLD = 'old',
+  NEW = 'new'
+}
+
+export enum COURSE_ELEMENT_STATUSES_ENUM {
+  NOTSENT = 'NOTSENT',
+  SENT = 'SENT',
+  PROCESS = 'PROCESS',
+  VERIFIED = 'VERIFIED'
+}
+
+export enum ACCESSES_ENUM {
+  HOMEWORK = 'HOMEWORK',
+  INVESTMENT = 'INVESTMENT',
+  EXPERT = 'EXPERT'
+}
+
+export enum COURSES_ENUM {
+  ONE = 'one',
+  TWO = 'two'
+}
+
+export enum PERIODS_ENUM {
+  NOT_PERIOD = 'NOT_PERIOD',
+  MONTHLY = 'MONTHLY',
+  QUARTERLY = 'QUARTERLY',
+  SEMIANNUALLY = 'SEMIANNUALLY',
+  ANNUALLY = 'ANNUALLY',
+}
+
+export enum DURATION_ENUM {
+  MONTH = 'MONTH',
+  YEAR = 'YEAR'
+}

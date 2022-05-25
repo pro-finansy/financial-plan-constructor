@@ -1,0 +1,4 @@
+01.07.2021 18:14: POST Instruments (expert_id: 60cb47cf1c9e0a0e96f012d9) - TypeError: Cannot read property 'toLowerCase' of undefined
+01.07.2021 18:14: POST Instruments (expert_id: 60cb47cf1c9e0a0e96f012d9) - TypeError: Cannot read property 'toLowerCase' of undefined
+11.08.2021 17:56: POST Instruments (expert_id: 60dd37a28dbada4f2e5ce148) - TypeError: Cannot read property 'trim' of undefined
+11.08.2021 17:58: POST Instruments (expert_id: 60dd37a28dbada4f2e5ce148) - TypeError: Cannot read property 'trim' of undefined

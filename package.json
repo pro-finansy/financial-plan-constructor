@@ -1,0 +1,22 @@
+{
+  "name": "finance3.0",
+  "version": "1.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^6.4.0"
+  },
+  "scripts": {
+    "initial:server": "yarn install --cwd server",
+    "initial:front": "yarn install --cwd front",
+    "initial": "yarn run initial:server && yarn run initial:front && yarn install",
+    "dev": "cross-env NODE_ENV=development concurrently \"npm run dev --prefix server\" \"npm run start --prefix front\"",
+    "dev:server": "npm run dev --prefix server",
+    "dev:front": "npm run start --prefix front",
+    "build:front": "npm run build --prefix front",
+    "build:server": "npm run build --prefix server",
+    "build": "yarn run build:server && yarn run build:front",
+    "production": "npm run production --prefix server",
+    "production:test": "npm run dist:dev --prefix server"
+  },
+  "devDependencies": {}
+}

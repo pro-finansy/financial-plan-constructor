@@ -1,0 +1,692 @@
+@import url("file:///Users/ofswg/Desktop/currentProjects/finance2.0/server/controllers/report/templates/static/font.css");
+@import url("../static/font.css");
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway", sans-serif;
+}
+
+.pdf {
+  padding-top: 40px;
+  width: 595px;
+  background: #fff;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.pdf > header {
+  background: linear-gradient(272.18deg, #006a44 0%, #058255 100%);
+  font-weight: 800;
+  padding: 30px 45px;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.pdf > header .name {
+  font-size: 28px;
+  line-height: 32px;
+  margin-bottom: 6px;
+  color: #ffffff;
+}
+
+.pdf > header .description {
+  font-size: 21px;
+  line-height: 25px;
+  color: #004d31;
+}
+
+.pdf > header img {
+  position: absolute;
+  top: -30px;
+  right: 25px;
+  width: 135px;
+}
+
+.pdf main {
+  padding: 0 45px;
+}
+
+.pdf main .users {
+  margin: 25px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.pdf main .users .user {
+  width: 50%;
+  position: relative;
+}
+
+.pdf main .users .user--title {
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.pdf main .users .user--container {
+  margin-top: 10px;
+}
+
+.pdf main .users .user--container.expert {
+  width: 60%;
+}
+
+.pdf main .users .user--container .element {
+  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.pdf main .users .user--container .element div {
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.pdf main .users .user--container .element div.value {
+  margin-right: 10px;
+}
+
+.pdf main .users .user--container .element div:first-child {
+  font-weight: bold;
+}
+
+.pdf main .users .user--more img {
+  width: 136px;
+  height: 136px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  bottom: 3px;
+  right: -45px;
+}
+
+.pdf main .users .user--more .line {
+  width: 118%;
+  height: 2px;
+  background-color: #02724a;
+  border-radius: 1px 0 0 1px;
+}
+
+.pdf main .targets--container .target {
+  margin-top: 25px;
+}
+
+.pdf main .targets,
+.pdf main .portfolio,
+.pdf main .comment,
+.pdf main .chart,
+.pdf main .info {
+  padding-top: 30px;
+}
+
+.pdf main .targets > header,
+.pdf main .portfolio > header,
+.pdf main .comment > header,
+.pdf main .chart > header,
+.pdf main .info > header {
+  padding: 15px 25px;
+  background: #058255;
+  border-radius: 15px;
+  font-weight: 800;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.pdf main .targets--container,
+.pdf main .portfolio--container,
+.pdf main .comment--container,
+.pdf main .chart--container,
+.pdf main .info--container {
+  padding-top: 30px;
+}
+
+.pdf main .targets--container .target,
+.pdf main .targets--container .section,
+.pdf main .targets--container .content,
+.pdf main .portfolio--container .target,
+.pdf main .portfolio--container .section,
+.pdf main .portfolio--container .content,
+.pdf main .comment--container .target,
+.pdf main .comment--container .section,
+.pdf main .comment--container .content,
+.pdf main .chart--container .target,
+.pdf main .chart--container .section,
+.pdf main .chart--container .content,
+.pdf main .info--container .target,
+.pdf main .info--container .section,
+.pdf main .info--container .content {
+  padding: 20px 25px;
+  border: 1px dashed #369b5f;
+  border-radius: 15px;
+}
+
+.pdf main .targets--container .target--title,
+.pdf main .targets--container .section--title,
+.pdf main .targets--container .content--title,
+.pdf main .portfolio--container .target--title,
+.pdf main .portfolio--container .section--title,
+.pdf main .portfolio--container .content--title,
+.pdf main .comment--container .target--title,
+.pdf main .comment--container .section--title,
+.pdf main .comment--container .content--title,
+.pdf main .chart--container .target--title,
+.pdf main .chart--container .section--title,
+.pdf main .chart--container .content--title,
+.pdf main .info--container .target--title,
+.pdf main .info--container .section--title,
+.pdf main .info--container .content--title {
+  font-weight: 800;
+  font-size: 20px;
+  color: #000000;
+}
+
+.pdf main .targets--container .target--container .element,
+.pdf main .targets--container .section--container .element,
+.pdf main .targets--container .content--container .element,
+.pdf main .portfolio--container .target--container .element,
+.pdf main .portfolio--container .section--container .element,
+.pdf main .portfolio--container .content--container .element,
+.pdf main .comment--container .target--container .element,
+.pdf main .comment--container .section--container .element,
+.pdf main .comment--container .content--container .element,
+.pdf main .chart--container .target--container .element,
+.pdf main .chart--container .section--container .element,
+.pdf main .chart--container .content--container .element,
+.pdf main .info--container .target--container .element,
+.pdf main .info--container .section--container .element,
+.pdf main .info--container .content--container .element {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 10px;
+}
+
+.pdf main .targets--container .target--container .element .pre,
+.pdf main .targets--container .section--container .element .pre,
+.pdf main .targets--container .content--container .element .pre,
+.pdf main .portfolio--container .target--container .element .pre,
+.pdf main .portfolio--container .section--container .element .pre,
+.pdf main .portfolio--container .content--container .element .pre,
+.pdf main .comment--container .target--container .element .pre,
+.pdf main .comment--container .section--container .element .pre,
+.pdf main .comment--container .content--container .element .pre,
+.pdf main .chart--container .target--container .element .pre,
+.pdf main .chart--container .section--container .element .pre,
+.pdf main .chart--container .content--container .element .pre,
+.pdf main .info--container .target--container .element .pre,
+.pdf main .info--container .section--container .element .pre,
+.pdf main .info--container .content--container .element .pre {
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.pdf main .targets--container .target--container .element > div,
+.pdf main .targets--container .section--container .element > div,
+.pdf main .targets--container .content--container .element > div,
+.pdf main .portfolio--container .target--container .element > div,
+.pdf main .portfolio--container .section--container .element > div,
+.pdf main .portfolio--container .content--container .element > div,
+.pdf main .comment--container .target--container .element > div,
+.pdf main .comment--container .section--container .element > div,
+.pdf main .comment--container .content--container .element > div,
+.pdf main .chart--container .target--container .element > div,
+.pdf main .chart--container .section--container .element > div,
+.pdf main .chart--container .content--container .element > div,
+.pdf main .info--container .target--container .element > div,
+.pdf main .info--container .section--container .element > div,
+.pdf main .info--container .content--container .element > div {
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.pdf main .targets--container .target--container .element > div:first-child,
+.pdf main .targets--container .section--container .element > div:first-child,
+.pdf main .targets--container .content--container .element > div:first-child,
+.pdf main .portfolio--container .target--container .element > div:first-child,
+.pdf main .portfolio--container .section--container .element > div:first-child,
+.pdf main .portfolio--container .content--container .element > div:first-child,
+.pdf main .comment--container .target--container .element > div:first-child,
+.pdf main .comment--container .section--container .element > div:first-child,
+.pdf main .comment--container .content--container .element > div:first-child,
+.pdf main .chart--container .target--container .element > div:first-child,
+.pdf main .chart--container .section--container .element > div:first-child,
+.pdf main .chart--container .content--container .element > div:first-child,
+.pdf main .info--container .target--container .element > div:first-child,
+.pdf main .info--container .section--container .element > div:first-child,
+.pdf main .info--container .content--container .element > div:first-child {
+  font-weight: bold;
+  min-width: 125px;
+  width: 125px;
+  margin-right: 20px;
+}
+
+.pdf main .targets--container .target--container .element > div:last-child,
+.pdf main .targets--container .section--container .element > div:last-child,
+.pdf main .targets--container .content--container .element > div:last-child,
+.pdf main .portfolio--container .target--container .element > div:last-child,
+.pdf main .portfolio--container .section--container .element > div:last-child,
+.pdf main .portfolio--container .content--container .element > div:last-child,
+.pdf main .comment--container .target--container .element > div:last-child,
+.pdf main .comment--container .section--container .element > div:last-child,
+.pdf main .comment--container .content--container .element > div:last-child,
+.pdf main .chart--container .target--container .element > div:last-child,
+.pdf main .chart--container .section--container .element > div:last-child,
+.pdf main .chart--container .content--container .element > div:last-child,
+.pdf main .info--container .target--container .element > div:last-child,
+.pdf main .info--container .section--container .element > div:last-child,
+.pdf main .info--container .content--container .element > div:last-child {
+  word-wrap: break-word;
+  max-width: 308px;
+}
+
+.pdf main .targets--container .target--container .element > div:last-child > div,
+.pdf main .targets--container .section--container .element > div:last-child > div,
+.pdf main .targets--container .content--container .element > div:last-child > div,
+.pdf main .portfolio--container .target--container .element > div:last-child > div,
+.pdf main .portfolio--container .section--container .element > div:last-child > div,
+.pdf main .portfolio--container .content--container .element > div:last-child > div,
+.pdf main .comment--container .target--container .element > div:last-child > div,
+.pdf main .comment--container .section--container .element > div:last-child > div,
+.pdf main .comment--container .content--container .element > div:last-child > div,
+.pdf main .chart--container .target--container .element > div:last-child > div,
+.pdf main .chart--container .section--container .element > div:last-child > div,
+.pdf main .chart--container .content--container .element > div:last-child > div,
+.pdf main .info--container .target--container .element > div:last-child > div,
+.pdf main .info--container .section--container .element > div:last-child > div,
+.pdf main .info--container .content--container .element > div:last-child > div {
+  margin-bottom: 15px;
+}
+
+.pdf main .targets--container .target--container .element > div:last-child > div:last-child,
+.pdf main .targets--container .section--container .element > div:last-child > div:last-child,
+.pdf main .targets--container .content--container .element > div:last-child > div:last-child,
+.pdf main .portfolio--container .target--container .element > div:last-child > div:last-child,
+.pdf main .portfolio--container .section--container .element > div:last-child > div:last-child,
+.pdf main .portfolio--container .content--container .element > div:last-child > div:last-child,
+.pdf main .comment--container .target--container .element > div:last-child > div:last-child,
+.pdf main .comment--container .section--container .element > div:last-child > div:last-child,
+.pdf main .comment--container .content--container .element > div:last-child > div:last-child,
+.pdf main .chart--container .target--container .element > div:last-child > div:last-child,
+.pdf main .chart--container .section--container .element > div:last-child > div:last-child,
+.pdf main .chart--container .content--container .element > div:last-child > div:last-child,
+.pdf main .info--container .target--container .element > div:last-child > div:last-child,
+.pdf main .info--container .section--container .element > div:last-child > div:last-child,
+.pdf main .info--container .content--container .element > div:last-child > div:last-child {
+  margin-bottom: 0;
+}
+
+.pdf main .targets--container .target--container .element > div:last-child > div img,
+.pdf main .targets--container .section--container .element > div:last-child > div img,
+.pdf main .targets--container .content--container .element > div:last-child > div img,
+.pdf main .portfolio--container .target--container .element > div:last-child > div img,
+.pdf main .portfolio--container .section--container .element > div:last-child > div img,
+.pdf main .portfolio--container .content--container .element > div:last-child > div img,
+.pdf main .comment--container .target--container .element > div:last-child > div img,
+.pdf main .comment--container .section--container .element > div:last-child > div img,
+.pdf main .comment--container .content--container .element > div:last-child > div img,
+.pdf main .chart--container .target--container .element > div:last-child > div img,
+.pdf main .chart--container .section--container .element > div:last-child > div img,
+.pdf main .chart--container .content--container .element > div:last-child > div img,
+.pdf main .info--container .target--container .element > div:last-child > div img,
+.pdf main .info--container .section--container .element > div:last-child > div img,
+.pdf main .info--container .content--container .element > div:last-child > div img {
+  width: 308px;
+}
+
+.pdf main .portfolio.student > header {
+  background-color: #5c6bc0;
+  color: #fff;
+}
+
+.pdf main .portfolio.student .portfolio--container .section {
+  border-color: #5c6bc0;
+}
+
+.pdf main .portfolio.expert > header {
+  background-color: #941e76;
+  color: #fff;
+}
+
+.pdf main .portfolio.expert .portfolio--container .section {
+  border-color: #941e76;
+}
+
+.pdf main .portfolio > header {
+  background: #fcc033;
+  color: #000;
+}
+
+.pdf main .portfolio--container .section {
+  border-color: #fcc033;
+}
+
+.pdf main .portfolio--container .section--container .title {
+  font-size: 10px;
+  padding-top: 15px;
+  font-weight: bold;
+  line-height: 12px;
+}
+
+.pdf main .portfolio--container .section--container .description {
+  font-size: 10px;
+  font-style: italic;
+  line-height: 12px;
+  padding-top: 10px;
+}
+
+.pdf main .portfolio--container .section--container .table {
+  padding-top: 10px;
+}
+
+.pdf main .portfolio--container .section--container .table header {
+  font-size: 9px;
+  line-height: 12px;
+  font-weight: bold;
+}
+
+.pdf main .portfolio--container .section--container .table table {
+  margin-top: 5px;
+  width: 100%;
+}
+
+.pdf main .portfolio--container .section--container .table table tr td,
+.pdf main .portfolio--container .section--container .table table tr th {
+  font-size: 6px;
+  line-height: 8px;
+  padding: 4px;
+  vertical-align: top;
+  text-align: left;
+}
+
+.pdf main .portfolio--container .section--container .table table thead tr th {
+  font-weight: bold;
+}
+
+.pdf main .portfolio--container .section--container .table table tbody tr:first-child {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.pdf main .portfolio--container .section--container .element .chart {
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pdf main .portfolio--container .section--container .element .chart .legend {
+  margin-left: 30px;
+  margin-bottom: 0;
+}
+
+.pdf main .portfolio--container .section--container .element .chart .legend > div {
+  font-size: 8px;
+  line-height: 9px;
+}
+
+.pdf main .portfolio--container .section--container .element .chart .legend > div:last-child {
+  margin-bottom: 0 !important;
+}
+
+.pdf main .portfolio--container .section--container .charts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 15px;
+}
+
+.pdf main .portfolio--container .section--container .charts .chart {
+  width: 50%;
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 10px;
+}
+
+.pdf main .portfolio--container .section--container .charts .chart--title {
+  font-weight: bold;
+  font-size: 10px;
+  line-height: 12px;
+  height: 30px;
+  vertical-align: top;
+}
+
+.pdf main .portfolio--container .section--container .charts .chart--container {
+  padding-top: 0;
+  font-size: 11px;
+  width: 100%;
+  font-size: 8px;
+  line-height: 9px;
+  text-align: center;
+}
+
+.pdf main .portfolio--container .section--container .charts .chart--container .legend {
+  margin-top: 15px;
+}
+
+.pdf main .comment header {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.pdf main .comment--container .content {
+  border-color: #f44336;
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.pdf main .chart header,
+.pdf main .info header {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #000;
+}
+
+.pdf main .chart--container .content,
+.pdf main .info--container .content {
+  border-color: rgba(0, 0, 0, 0.25);
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.pdf main .chart--container .content--container .el,
+.pdf main .info--container .content--container .el {
+  font-size: 10px;
+  line-height: 12px;
+  margin-bottom: 10px;
+}
+
+.pdf main .chart--container .content table,
+.pdf main .info--container .content table {
+  width: 100%;
+  text-align: center;
+}
+
+.pdf main .chart--container .content table th,
+.pdf main .info--container .content table th {
+  padding-bottom: 5px;
+}
+
+.pdf main .chart--container .content table tbody tr td,
+.pdf main .info--container .content table tbody tr td {
+  padding: 5px 10px;
+}
+
+.pdf main .chart--container .content table tbody tr:nth-child(2n - 1) td,
+.pdf main .info--container .content table tbody tr:nth-child(2n - 1) td {
+  background-color: #E7E7E7;
+}
+
+.pdf main .chart--container .content table tbody tr:nth-child(2n - 1) td:first-child,
+.pdf main .info--container .content table tbody tr:nth-child(2n - 1) td:first-child {
+  border-radius: 3px 0 0 3px;
+}
+
+.pdf main .chart--container .content table tbody tr:nth-child(2n - 1) td:last-child,
+.pdf main .info--container .content table tbody tr:nth-child(2n - 1) td:last-child {
+  border-radius: 0 3px 3px 0;
+}
+
+canvas {
+  width: 100px;
+  height: 100px;
+}
+
+.avoidAlways {
+  page-break-before: always;
+  padding-top: 30px;
+}
+
+.preWrap {
+  white-space: pre-wrap;
+}
+
+a {
+  text-decoration: none;
+}
+/*# sourceMappingURL=style.css.map */

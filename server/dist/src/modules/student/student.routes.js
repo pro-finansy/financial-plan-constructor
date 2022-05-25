@@ -1,0 +1,30 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const router = (0, express_1.Router)();
+const student_controller_1 = __importDefault(require("./student.controller"));
+const jwt_1 = __importDefault(require("../../middleware/jwt"));
+const verifyRoles_1 = __importDefault(require("../../middleware/verifyRoles"));
+const enums_1 = require("../../utils/enums");
+const multer_1 = __importDefault(require("multer"));
+const upload = (0, multer_1.default)({ storage: multer_1.default.memoryStorage() });
+router.get("/student/list", jwt_1.default, (0, verifyRoles_1.default)(true, enums_1.ROLES.OWNER, enums_1.ROLES.SUPPORT, enums_1.ROLES.EXPERT), student_controller_1.default.getStudentList);
+router.get("/student/questionnaires", jwt_1.default, student_controller_1.default.getStudentQuestionnaires);
+router.get("/student/course/:_id", jwt_1.default, student_controller_1.default.getCourseElement);
+router.post("/student/file/download", jwt_1.default, student_controller_1.default.downloadStudentFile);
+router.post("/expert/file/download", jwt_1.default, (0, verifyRoles_1.default)(true, enums_1.ROLES.OWNER, enums_1.ROLES.SUPPORT), student_controller_1.default.downloadExpertFile);
+router.post("/student", jwt_1.default, (0, verifyRoles_1.default)(true, enums_1.ROLES.OWNER, enums_1.ROLES.SUPPORT), student_controller_1.default.createStudent);
+router.patch("/student", jwt_1.default, (0, verifyRoles_1.default)(true, enums_1.ROLES.OWNER, enums_1.ROLES.SUPPORT), student_controller_1.default.changeStudent);
+router.patch("/student/expert", jwt_1.default, (0, verifyRoles_1.default)(true, enums_1.ROLES.OWNER, enums_1.ROLES.SUPPORT), student_controller_1.default.changeExpert);
+router.patch("/student/expert/change", jwt_1.default, (0, verifyRoles_1.default)(true, enums_1.ROLES.OWNER, enums_1.ROLES.SUPPORT), student_controller_1.default.changeExpertStudents);
+router.patch("/student/expert/change/list", jwt_1.default, (0, verifyRoles_1.default)(true, enums_1.ROLES.OWNER, enums_1.ROLES.SUPPORT), upload.single('excel'), student_controller_1.default.changeExpertListStudents);
+router.patch("/student/stream", jwt_1.default, (0, verifyRoles_1.default)(true, enums_1.ROLES.OWNER, enums_1.ROLES.SUPPORT), student_controller_1.default.changeStreamDate);
+router.patch("/student/password", jwt_1.default, (0, verifyRoles_1.default)(true, enums_1.ROLES.OWNER, enums_1.ROLES.SUPPORT), student_controller_1.default.changePassword);
+router.patch("/student/delete/list", jwt_1.default, (0, verifyRoles_1.default)(true, enums_1.ROLES.OWNER, enums_1.ROLES.SUPPORT), upload.single('excel'), student_controller_1.default.deleteStudents);
+router.delete("/student/:_id", jwt_1.default, (0, verifyRoles_1.default)(true, enums_1.ROLES.OWNER, enums_1.ROLES.SUPPORT), student_controller_1.default.deleteStudent);
+router.delete("/student/file/:_id", jwt_1.default, (0, verifyRoles_1.default)(true, enums_1.ROLES.OWNER, enums_1.ROLES.SUPPORT), student_controller_1.default.deleteStudentFile);
+module.exports = router;
+//# sourceMappingURL=student.routes.js.map

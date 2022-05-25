@@ -1,0 +1,1 @@
+{"version":3,"file":"processes.js","sourceRoot":"","sources":["../../config/processes.ts"],"names":[],"mappings":";;;;AAAA,kEAAqC;AACrC,kFAA0E;AAC1E,qFAAyE;AAEzE,iBAAS,GAAG,EAAE;IACZ,MAAM,KAAK,GAAG,YAAY,CAAC,CAAC,WAAW;IACvC,uBAAQ,CAAC,WAAW,CAAC,KAAK,EAAE;QAC1B,IAAA,kCAAa,GAAE,CAAC;IAClB,CAAC,CAAC,CAAC;IACH,IAAA,gCAAU,GAAE,CAAC;AACf,CAAC,CAAC"}

@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Questionnaire</title>
+    <style>
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway", sans-serif;
+}
+
+.pdf {
+  padding-top: 20px;
+  width: 595px;
+  background: #fff;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.pdf > header {
+  background: linear-gradient(272.18deg, #006a44 0%, #058255 100%);
+  font-weight: 800;
+  padding: 30px 45px;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.pdf > header .name {
+  font-size: 28px;
+  line-height: 32px;
+  margin-bottom: 6px;
+  color: #ffffff;
+}
+
+.pdf > header .description {
+  font-size: 14px;
+  line-height: 25px;
+  color: #004d31;
+}
+
+.pdf > header img {
+  position: absolute;
+  top: -30px;
+  right: 25px;
+  width: 135px;
+}
+
+.pdf main {
+  padding: 0 45px;
+}
+
+.pdf main .users {
+  margin: 25px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.pdf main .users .user {
+  width: 46%;
+  position: relative;
+}
+
+.pdf main .users .user--title {
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.pdf main .users .user--container {
+  margin-top: 10px;
+}
+
+.pdf main .users .user--container.expert {
+  width: 60%;
+}
+
+.pdf main .users .user--container .element {
+  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.pdf main .users .user--container .element div {
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.pdf main .users .user--container .element div.value {
+  margin-right: 10px;
+}
+
+.pdf main .users .user--container .element div:first-child {
+  font-weight: bold;
+}
+
+.pdf main .users .user--more img {
+  width: 130px;
+  position: absolute;
+  bottom: 3px;
+  right: -45px;
+}
+
+.pdf main .users .user--more .line {
+  width: 118%;
+  height: 2px;
+  background-color: #02724a;
+  border-radius: 1px 0 0 1px;
+}
+
+.pdf main .targets--container .target {
+  margin-top: 25px;
+}
+
+.pdf main .targets,
+.pdf main .portfolio,
+.pdf main .comment,
+.pdf main .chart,
+.pdf main .info {
+  padding-top: 30px;
+}
+
+.pdf main .targets > header,
+.pdf main .portfolio > header,
+.pdf main .comment > header,
+.pdf main .chart > header,
+.pdf main .info > header {
+  padding: 15px 25px;
+  background: #058255;
+  border-radius: 15px;
+  font-weight: 800;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.pdf main .targets--container,
+.pdf main .portfolio--container,
+.pdf main .comment--container,
+.pdf main .chart--container,
+.pdf main .info--container {
+  padding-top: 30px;
+}
+
+.pdf main .targets--container .target,
+.pdf main .targets--container .section,
+.pdf main .targets--container .content,
+.pdf main .portfolio--container .target,
+.pdf main .portfolio--container .section,
+.pdf main .portfolio--container .content,
+.pdf main .comment--container .target,
+.pdf main .comment--container .section,
+.pdf main .comment--container .content,
+.pdf main .chart--container .target,
+.pdf main .chart--container .section,
+.pdf main .chart--container .content,
+.pdf main .info--container .target,
+.pdf main .info--container .section,
+.pdf main .info--container .content {
+  padding: 15px;
+  border: 1px dashed #369b5f;
+  border-radius: 15px;
+}
+
+.pdf main .targets--container .target--title,
+.pdf main .targets--container .section--title,
+.pdf main .targets--container .content--title,
+.pdf main .portfolio--container .target--title,
+.pdf main .portfolio--container .section--title,
+.pdf main .portfolio--container .content--title,
+.pdf main .comment--container .target--title,
+.pdf main .comment--container .section--title,
+.pdf main .comment--container .content--title,
+.pdf main .chart--container .target--title,
+.pdf main .chart--container .section--title,
+.pdf main .chart--container .content--title,
+.pdf main .info--container .target--title,
+.pdf main .info--container .section--title,
+.pdf main .info--container .content--title {
+  font-weight: 800;
+  font-size: 20px;
+  color: #000000;
+}
+
+.pdf main .targets--container .target--container .element,
+.pdf main .targets--container .section--container .element,
+.pdf main .targets--container .content--container .element,
+.pdf main .portfolio--container .target--container .element,
+.pdf main .portfolio--container .section--container .element,
+.pdf main .portfolio--container .content--container .element,
+.pdf main .comment--container .target--container .element,
+.pdf main .comment--container .section--container .element,
+.pdf main .comment--container .content--container .element,
+.pdf main .chart--container .target--container .element,
+.pdf main .chart--container .section--container .element,
+.pdf main .chart--container .content--container .element,
+.pdf main .info--container .target--container .element,
+.pdf main .info--container .section--container .element,
+.pdf main .info--container .content--container .element {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 10px;
+}
+
+.pdf main .targets--container .target--container .element .pre,
+.pdf main .targets--container .section--container .element .pre,
+.pdf main .targets--container .content--container .element .pre,
+.pdf main .portfolio--container .target--container .element .pre,
+.pdf main .portfolio--container .section--container .element .pre,
+.pdf main .portfolio--container .content--container .element .pre,
+.pdf main .comment--container .target--container .element .pre,
+.pdf main .comment--container .section--container .element .pre,
+.pdf main .comment--container .content--container .element .pre,
+.pdf main .chart--container .target--container .element .pre,
+.pdf main .chart--container .section--container .element .pre,
+.pdf main .chart--container .content--container .element .pre,
+.pdf main .info--container .target--container .element .pre,
+.pdf main .info--container .section--container .element .pre,
+.pdf main .info--container .content--container .element .pre {
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.pdf main .targets--container .target--container .element > div,
+.pdf main .targets--container .section--container .element > div,
+.pdf main .targets--container .content--container .element > div,
+.pdf main .portfolio--container .target--container .element > div,
+.pdf main .portfolio--container .section--container .element > div,
+.pdf main .portfolio--container .content--container .element > div,
+.pdf main .comment--container .target--container .element > div,
+.pdf main .comment--container .section--container .element > div,
+.pdf main .comment--container .content--container .element > div,
+.pdf main .chart--container .target--container .element > div,
+.pdf main .chart--container .section--container .element > div,
+.pdf main .chart--container .content--container .element > div,
+.pdf main .info--container .target--container .element > div,
+.pdf main .info--container .section--container .element > div,
+.pdf main .info--container .content--container .element > div {
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.pdf main .targets--container .target--container .element > div:first-child,
+.pdf main .targets--container .section--container .element > div:first-child,
+.pdf main .targets--container .content--container .element > div:first-child,
+.pdf main .portfolio--container .target--container .element > div:first-child,
+.pdf main .portfolio--container .section--container .element > div:first-child,
+.pdf main .portfolio--container .content--container .element > div:first-child,
+.pdf main .comment--container .target--container .element > div:first-child,
+.pdf main .comment--container .section--container .element > div:first-child,
+.pdf main .comment--container .content--container .element > div:first-child,
+.pdf main .chart--container .target--container .element > div:first-child,
+.pdf main .chart--container .section--container .element > div:first-child,
+.pdf main .chart--container .content--container .element > div:first-child,
+.pdf main .info--container .target--container .element > div:first-child,
+.pdf main .info--container .section--container .element > div:first-child,
+.pdf main .info--container .content--container .element > div:first-child {
+  font-weight: bold;
+  min-width: 125px;
+  width: 125px;
+  margin-right: 20px;
+}
+
+.pdf main .targets--container .target--container .element > div:last-child,
+.pdf main .targets--container .section--container .element > div:last-child,
+.pdf main .targets--container .content--container .element > div:last-child,
+.pdf main .portfolio--container .target--container .element > div:last-child,
+.pdf main .portfolio--container .section--container .element > div:last-child,
+.pdf main .portfolio--container .content--container .element > div:last-child,
+.pdf main .comment--container .target--container .element > div:last-child,
+.pdf main .comment--container .section--container .element > div:last-child,
+.pdf main .comment--container .content--container .element > div:last-child,
+.pdf main .chart--container .target--container .element > div:last-child,
+.pdf main .chart--container .section--container .element > div:last-child,
+.pdf main .chart--container .content--container .element > div:last-child,
+.pdf main .info--container .target--container .element > div:last-child,
+.pdf main .info--container .section--container .element > div:last-child,
+.pdf main .info--container .content--container .element > div:last-child {
+  word-wrap: break-word;
+  max-width: 320px;
+  min-width: 320px;
+}
+
+.pdf main .targets--container .target--container .element > div:last-child > div,
+.pdf main .targets--container .section--container .element > div:last-child > div,
+.pdf main .targets--container .content--container .element > div:last-child > div,
+.pdf main .portfolio--container .target--container .element > div:last-child > div,
+.pdf main .portfolio--container .section--container .element > div:last-child > div,
+.pdf main .portfolio--container .content--container .element > div:last-child > div,
+.pdf main .comment--container .target--container .element > div:last-child > div,
+.pdf main .comment--container .section--container .element > div:last-child > div,
+.pdf main .comment--container .content--container .element > div:last-child > div,
+.pdf main .chart--container .target--container .element > div:last-child > div,
+.pdf main .chart--container .section--container .element > div:last-child > div,
+.pdf main .chart--container .content--container .element > div:last-child > div,
+.pdf main .info--container .target--container .element > div:last-child > div,
+.pdf main .info--container .section--container .element > div:last-child > div,
+.pdf main .info--container .content--container .element > div:last-child > div {
+  margin-bottom: 15px;
+}
+
+.pdf main .targets--container .target--container .element > div:last-child > div:last-child,
+.pdf main .targets--container .section--container .element > div:last-child > div:last-child,
+.pdf main .targets--container .content--container .element > div:last-child > div:last-child,
+.pdf main .portfolio--container .target--container .element > div:last-child > div:last-child,
+.pdf main .portfolio--container .section--container .element > div:last-child > div:last-child,
+.pdf main .portfolio--container .content--container .element > div:last-child > div:last-child,
+.pdf main .comment--container .target--container .element > div:last-child > div:last-child,
+.pdf main .comment--container .section--container .element > div:last-child > div:last-child,
+.pdf main .comment--container .content--container .element > div:last-child > div:last-child,
+.pdf main .chart--container .target--container .element > div:last-child > div:last-child,
+.pdf main .chart--container .section--container .element > div:last-child > div:last-child,
+.pdf main .chart--container .content--container .element > div:last-child > div:last-child,
+.pdf main .info--container .target--container .element > div:last-child > div:last-child,
+.pdf main .info--container .section--container .element > div:last-child > div:last-child,
+.pdf main .info--container .content--container .element > div:last-child > div:last-child {
+  margin-bottom: 0;
+}
+
+.pdf main .targets--container .target--container .element > div:last-child > div img,
+.pdf main .targets--container .section--container .element > div:last-child > div img,
+.pdf main .targets--container .content--container .element > div:last-child > div img,
+.pdf main .portfolio--container .target--container .element > div:last-child > div img,
+.pdf main .portfolio--container .section--container .element > div:last-child > div img,
+.pdf main .portfolio--container .content--container .element > div:last-child > div img,
+.pdf main .comment--container .target--container .element > div:last-child > div img,
+.pdf main .comment--container .section--container .element > div:last-child > div img,
+.pdf main .comment--container .content--container .element > div:last-child > div img,
+.pdf main .chart--container .target--container .element > div:last-child > div img,
+.pdf main .chart--container .section--container .element > div:last-child > div img,
+.pdf main .chart--container .content--container .element > div:last-child > div img,
+.pdf main .info--container .target--container .element > div:last-child > div img,
+.pdf main .info--container .section--container .element > div:last-child > div img,
+.pdf main .info--container .content--container .element > div:last-child > div img {
+  width: 308px;
+}
+
+.pdf main .portfolio.student > header {
+  background-color: #5c6bc0;
+  color: #fff;
+}
+
+.pdf main .portfolio.student .portfolio--container .section {
+  border-color: #5c6bc0;
+}
+
+.pdf main .portfolio.expert > header {
+  background-color: #941e76;
+  color: #fff;
+}
+
+.pdf main .portfolio.expert .portfolio--container .section {
+  border-color: #941e76;
+}
+
+.pdf main .portfolio > header {
+  background: #fcc033;
+  color: #000;
+}
+
+.pdf main .portfolio--container .section {
+  border-color: #fcc033;
+}
+
+.pdf main .portfolio--container .section--container .title {
+  font-size: 10px;
+  padding-top: 15px;
+  font-weight: bold;
+  line-height: 12px;
+}
+
+.pdf main .portfolio--container .section--container .comment {
+  padding-top: 10px;
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 300;
+}
+
+.pdf main .portfolio--container .section--container .description {
+  font-size: 10px;
+  font-style: italic;
+  line-height: 12px;
+}
+
+.pdf main .portfolio--container .section--container .table {
+  width: auto;
+}
+
+.pdf main .portfolio--container .section--container .table header {
+  font-size: 9px;
+  line-height: 12px;
+  font-weight: bold;
+}
+
+.pdf main .portfolio--container .section--container .table table {
+  margin-top: 5px;
+  width: 100%;
+}
+
+.pdf main .portfolio--container .section--container .table table tr td,
+.pdf main .portfolio--container .section--container .table table tr th {
+  font-size: 7px;
+  line-height: 9px;
+  padding: 4px;
+  vertical-align: top;
+  text-align: left;
+}
+
+.pdf main .portfolio--container .section--container .table table thead tr th {
+  font-weight: bold;
+}
+
+.pdf main .portfolio--container .section--container .table table tbody tr:first-child {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.pdf main .portfolio--container .section--container .element .chart {
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pdf main .portfolio--container .section--container .element .chart .legend {
+  margin-left: 30px;
+  margin-bottom: 0;
+}
+
+.pdf main .portfolio--container .section--container .element .chart .legend > div {
+  font-size: 8px;
+  line-height: 9px;
+}
+
+.pdf main .portfolio--container .section--container .element .chart .legend > div:last-child {
+  margin-bottom: 0 !important;
+}
+
+.pdf main .portfolio--container .section--container .charts {
+  padding-top: 15px;
+}
+
+.pdf main .portfolio--container .section--container .charts .chart {
+  width: 49.5%;
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 10px;
+  display: inline-table;
+}
+
+.pdf main .portfolio--container .section--container .charts .chart--title {
+  font-weight: bold;
+  font-size: 10px;
+  line-height: 12px;
+  height: 30px;
+  vertical-align: top;
+}
+
+.pdf main .portfolio--container .section--container .charts .chart--container {
+  padding-top: 0;
+  font-size: 11px;
+  width: 100%;
+  font-size: 8px;
+  line-height: 9px;
+  text-align: center;
+}
+
+.pdf main .portfolio--container .section--container .charts .chart--container .legend {
+  margin-top: 15px;
+}
+
+.pdf main .comment header {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.pdf main .comment--container .content {
+  border-color: #f44336;
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.pdf main .chart header,
+.pdf main .info header {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #000;
+}
+
+.pdf main .chart--container .content,
+.pdf main .info--container .content {
+  border-color: rgba(0, 0, 0, 0.25);
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.pdf main .chart--container .content--container .el,
+.pdf main .info--container .content--container .el {
+  font-size: 10px;
+  line-height: 12px;
+  margin-bottom: 10px;
+}
+
+.pdf main .chart--container .content table,
+.pdf main .info--container .content table {
+  width: 100%;
+  text-align: center;
+}
+
+.pdf main .chart--container .content table th,
+.pdf main .info--container .content table th {
+  padding-bottom: 5px;
+}
+
+.pdf main .chart--container .content table tbody tr td,
+.pdf main .info--container .content table tbody tr td {
+  padding: 5px 10px;
+}
+
+.pdf main .chart--container .content table tbody tr:nth-child(2n - 1) td,
+.pdf main .info--container .content table tbody tr:nth-child(2n - 1) td {
+  background-color: #E7E7E7;
+}
+
+.pdf main .chart--container .content table tbody tr:nth-child(2n - 1) td:first-child,
+.pdf main .info--container .content table tbody tr:nth-child(2n - 1) td:first-child {
+  border-radius: 3px 0 0 3px;
+}
+
+.pdf main .chart--container .content table tbody tr:nth-child(2n - 1) td:last-child,
+.pdf main .info--container .content table tbody tr:nth-child(2n - 1) td:last-child {
+  border-radius: 0 3px 3px 0;
+}
+
+canvas {
+  width: 100px;
+  height: 100px;
+}
+
+.avoidAlways {
+  page-break-before: always;
+  padding-top: 30px;
+}
+
+.preWrap {
+  white-space: pre-line;
+  word-break: break-word;
+}
+
+.robotoFont {
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: -0.1px;
+  font-weight: 400;
+}
+.robotoFontStrong {
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+}
+
+<% if (onepage) { %>
+  html, body {
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: -0.1px;
+  font-weight: 300;
+}
+.pdf {
+  width: 100%;
+}
+.pdf > header {
+  font-family: "Raleway", sans-serif;
+}
+.pdf main .users .user--more img {
+  /* bottom: 74px; */
+}
+.robotoFont {
+  font-weight: 300;
+}
+<% } %>
+/*# sourceMappingURL=style.css.map */
+    </style>
+  </head>
+  <body>
+    <div class="pdf">
+      <header>
+        <div class="name">Ваш финансовый план</div>
+        <div class="description">по итогам курса «Капитал: Инвестируем валюту»</div>
+        <img src="<%= header %>" alt="" />
+      </header>
+      <main>
+        <div class="users">
+          <div class="user">
+            <div class="user--title">Обучающийся</div>
+            <div class="user--container">
+              <div class="element">
+                <div></div>
+                <div><%= student.name %></div>
+              </div>
+              <div class="element robotoFont">
+                <div></div>
+                <div><%= student.phone %></div>
+              </div>
+              <div class="element">
+                <div></div>
+                <div><%= student.email %></div>
+              </div>
+              <div class="element">
+                <div class="value">Валюта текущего дохода:</div>
+                <div><%= student.currency %></div>
+              </div>
+              <div class="element">
+                <div class="value">Страна налогового резиденства:</div>
+                <div><%= student.country %></div>
+              </div>
+              <div class="element">
+                <div class="value">Статус госслужащего:</div>
+                <div><%= student.role %></div>
+              </div>
+              <% if (student.role === 'Да') { %>
+                <div class="element">
+                  <div></div>
+                  <div>Вы указали, что являетесь госслужащим. Пожалуйста, ознакомьтесь с файлом «Особенности инвестирования для госслужащих», который мы присылали в чат. С помощью него вы сможете точно определиться, какие у вас есть возможности и ограничения в инвестировании. Посмотрите дополнительно видео Ольги в Инстаграм «Инвестиции для госслужащих» - <a style="color: rgb(0, 89, 255);" href="https://www.instagram.com/p/CKgdcyoj4Nc/" target="_blank">https://www.instagram.com/p/CKgdcyoj4Nc/</a></div>
+                </div>
+                <div class="element">
+                  <div></div>
+                  <div>Вашу работу я проверяю исходя из предположения, что вам нельзя открывать счет и покупать активы у зарубежного брокера.</div>
+                </div>
+              <% } %>
+            </div>
+          </div>
+          <div class="user">
+            <div class="user--title">Проверяющий</div>
+            <div class="user--container expert">
+              <div class="element">
+                <div></div>
+                <div>Эксперт курса «Капитал: инвестируем валюту»</div>
+              </div>
+              <div class="element">
+                <div></div>
+                <div><%= expert.name %></div>
+              </div>
+              <div class="element robotoFont">
+                <div></div>
+                <div><%= expert.phone %> (WhatsApp)</div>
+              </div>
+              <div class="element">
+                <div></div>
+                <% if (expert.showChat) { %>
+                  <div>
+                    Учебный чат снова откроется <%= expert.days %>, время работы
+                    <strong class="robotoFont robotoFontStrong"><%= expert.times %></strong> по мск. времени
+                  </div>
+                <% } else { %>
+                  <div style="height: 49px; width: 100px"></div>
+                <% } %>
+              </div>
+            </div>
+            <div class="user--more">
+              <img src="<%= avatar %>" alt="" />
+              <div class="line"></div>
+            </div>
+          </div>
+        </div>
+        <div class="targets" style="padding: 0;">
+          <header>Финансовые цели</header>
+          <div class="targets--container" style="padding: 0;">
+            <% targets.forEach(target => { %>
+              <div class="target">
+                <div class="target--title space">Цель <%= target.id %></div>
+                <div class="target--container">
+                  <div class="element space">
+                    <div>Финансовое благополучие:</div>
+                    <div class="preWrap robotoFont"><%= target.name %></div>
+                  </div>
+                  <div class="element space">
+                    <div>Сумма цели:</div>
+                    <div class="robotoFont"><%= target.income %> <%= target.mainCurrency %></div>
+                  </div>
+                  <div class="element space">
+                    <div>Срок:</div>
+                    <div class="robotoFont"><%= target.term %></div>
+                  </div>
+                  <div class="element space">
+                    <div>Имеющиеся ресурсы для достижения цели:</div>
+                    <div class="robotoFont"><%= target.resourses %> <%= target.mainCurrency %></div>
+                  </div>
+                  <div class="element space">
+                    <div>Процент достижения цели:</div>
+                    <div class="robotoFont">Цель достигнута на <%= target.percent %>%</div>
+                  </div>
+                  <% if (target.type == 2) { %>
+                    <div class="element space">
+                      <div>Сумма пассивного дохода в месяц с учетом инфляции:</div>
+                      <div class="robotoFont"><%= target.passive %> <%= target.mainCurrency %></div>
+                    </div>
+                    <div class="element space">
+                      <div>Необходимый капитал для пассивного дохода с учетом инфляции:</div>
+                      <div class="robotoFont"><%= target.capital %> <%= target.mainCurrency %></div>
+                    </div>
+                  <% } %>
+                  <div class="element space">
+                    <div>Необходимые финансы для достижения цели:</div>
+                    <div class="robotoFont"><%= target.conclusion.amount %> <%= target.mainCurrency %></div>
+                  </div>
+                  <div class="element space">
+                    <div>Риск-профиль:</div>
+                    <div>
+                      <div><%= target.riskPortfolio.name %></div>
+                      <div>
+                        Рекомендуется при <%= target.riskPortfolio.tag %> риск-профиле придерживаться
+                        данного соотношения классов активов:
+                      </div>
+                      <div>
+                        <img src="<%= target.riskPortfolio.icon %>" alt="">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="element space">
+                    <div>Периодичность пополнения портфеля:</div>
+                    <div>
+                      В конце отчета для удобства есть график пополнений вашей цели. Вы можете отмечать «галочками» те внесения, которые сделаны. Справа в графике вы можете писать суммы, которые вы уже накопили на счете.
+                      Пусть ваши финансовые цели будут достигнуты!                      
+                    </div>
+                  </div>
+                  <div class="element space">
+                    <div>Сумма, которую сейчас посильно вносить:</div>
+                    <% if (target.conclusion.period === 'без пополнений') { %>
+                      <div>Без пополнений</div>
+                    <% } else { %>
+                      <div class="robotoFont"><%= target.conclusion.replenishment %> <%= target.mainCurrency %>/<%= target.conclusion.period %></div>
+                    <% } %>
+                  </div>
+                  <div class="element">
+                    <div>Комментарий по формированию цели:</div>
+                    <div class="pre preWrap robotoFont"><%- target.conclusion.comment %></div>
+                  </div>
+                </div>
+              </div>
+            <% }) %>
+          </div>
+        </div>
+
+        <% targets.forEach(target => { %>
+          <% target.portfolios.forEach((portfolio, index) => { %>
+            <% if (target.status[portfolio.id] === 1) { %>
+              <div class="portfolio <%= portfolio.id %>">
+                <header class="space"><%= portfolio.name %>: (Цель <%= target.number %>)</header>
+                <div class="portfolio--container">
+                  <div class="section">
+                    <div class="section--title space">Ядро портфеля</div>
+                    <div class="section--container">
+                      <div class="element space">
+                        <div>
+                          Текущее соотношение ядра портфеля и тактических идей:
+                        </div>
+                        <div class="chart">
+                          <canvas id="<%= target.number %>myCanvas0<%= index %>"></canvas>
+                          <div id="<%= target.number %>myLegend0<%= index %>" class="legend"></div>
+                        </div>
+                      </div>
+                    <% if (portfolio.core.selected) { %>
+                      <div class="title space">Состав портфеля по инструментам:</div>
+                      <% if (portfolio.core.instruments.stock.length > 0) { %>
+                        <div class="table">
+                          <header>Акции:</header>
+                          <table>
+                            <thead>
+                              <tr class="space">
+                                <th style="width: 9%">Тикер/ISIN</th>
+                                <th style="width: 9%">Цена текущая</th>
+                                <% if (portfolio.id === 'existing') { %>
+                                  <th style="width: 9%">Цена покупки</th>
+                                <% } %>
+                                <% if (portfolio.id === 'expert') { %>
+                                  <th style="width: 9%">Процент ядра</th>
+                                <% } %>
+                                <th style="width: 11%">Кол-во бумаг</th>
+                                <th style="width: 11%">Сумма</th>
+                                <th style="width: 11%">Валюта покупки</th>
+                                <th style="width: 11%">Тип инструмента</th>
+                                <th style="width: 11%">Класс актива</th>
+                                <th style="width: 11%">География</th>
+                                <th style="width: 11%">Сектор экономики</th>
+                                <% if (portfolio.id === 'existing') { %>
+                                  <th style="width: 9%">Доходность</th>
+                                <% } %>
+                              </tr>
+                            </thead>
+                            <% portfolio.core.instruments.stock.forEach(instrument => { %>
+                              <tbody class="space">
+                                <tr>
+                                  <td class="robotoFont"><%= instrument.name  %></td>
+                                  <td class="robotoFont"><%= instrument.price  %></td>
+                                  <% if (portfolio.id === 'existing') { %>
+                                    <td class="robotoFont"><%= instrument.purchase_price  %></td>
+                                  <% } %>
+                                  <% if (portfolio.id === 'expert') { %>
+                                    <td class="robotoFont"><%= instrument.percent %>%</td>
+                                  <% } %>
+                                  <td class="robotoFont"><%= instrument.number_papers  %></td>
+                                  <td class="robotoFont"><%= (instrument.price * instrument.number_papers).toFixed(0)  %></td>
+                                  <td><%= instrument.currency_one  %></td>
+                                  <td><%= instrument.instrument_type_one  %></td>
+                                  <td><%= instrument.class_one  %></td>
+                                  <td><%= instrument.country_one  %></td>
+                                  <td><%= instrument.section_one %></td>
+                                  <% if (portfolio.id === 'existing' && instrument.purchase_price > 0) { %>
+                                    <td><%= ((instrument.price - instrument.purchase_price) / instrument.purchase_price * 100).toFixed(1) %>%</td>
+                                  <% } else if (portfolio.id === 'existing' && instrument.purchase_price == 0) { %>
+                                    <td></td>
+                                  <% } %>
+                                </tr>
+                                <% if (instrument.comment) { %>
+                                  <tr>
+                                    <td colspan="2">Комментарий эксперта:</td>
+                                    <td colspan="8" style="word-break: break-all;">
+                                      <div class="preWrap"><%- instrument.comment %></div>
+                                    </td>
+                                  </tr>
+                                <% } else { %>
+                                  <tr>
+                                    <td></td>
+                                  </tr>
+                                <% } %>
+                              </tbody>
+                            <% }) %>
+                          </table>
+                        </div>
+                      <% } %>
+                      <% if (portfolio.core.instruments.bond.length > 0) { %>
+                        <div class="table">
+                          <header>Облигации:</header>
+                          <table>
+                            <thead>
+                              <tr class="space">
+                                <th style="width: 9%">Тикер/ISIN</th>
+                                <th style="width: 9%">Цена текущая</th>
+                                <% if (portfolio.id === 'existing') { %>
+                                  <th style="width: 9%">Цена покупки</th>
+                                <% } %>
+                                <% if (portfolio.id === 'expert') { %>
+                                  <th style="width: 9%">Процент ядра</th>
+                                <% } %>
+                                <th style="width: 11%">Кол-во бумаг</th>
+                                <th style="width: 11%">Сумма</th>
+                                <th style="width: 11%">Валюта покупки</th>
+                                <th style="width: 11%">Тип инструмента</th>
+                                <th style="width: 11%">Класс актива</th>
+                                <th style="width: 11%">География</th>
+                                <th style="width: 11%">Сектор экономики</th>
+                                <% if (portfolio.id === 'existing') { %>
+                                  <th style="width: 9%">Доходность</th>
+                                <% } %>
+                              </tr>
+                            </thead>
+                            <% portfolio.core.instruments.bond.forEach(instrument => { %>
+                              <tbody class="space">
+                                <tr>
+                                  <td class="robotoFont"><%= instrument.name  %></td>
+                                  <td class="robotoFont"><%= instrument.price  %></td>
+                                  <% if (portfolio.id === 'existing') { %>
+                                    <td class="robotoFont"><%= instrument.purchase_price  %></td>
+                                  <% } %>
+                                  <% if (portfolio.id === 'expert') { %>
+                                    <td class="robotoFont"><%= instrument.percent %>%</td>
+                                  <% } %>
+                                  <td class="robotoFont"><%= instrument.number_papers  %></td>
+                                  <td class="robotoFont"><%= (instrument.price * instrument.number_papers).toFixed(0)  %></td>
+                                  <td><%= instrument.currency_one  %></td>
+                                  <td><%= instrument.instrument_type_one  %></td>
+                                  <td><%= instrument.class_one  %></td>
+                                  <td><%= instrument.country_one  %></td>
+                                  <td><%= instrument.section_one %></td>
+                                  <% if (portfolio.id === 'existing' && instrument.purchase_price > 0) { %>
+                                    <td><%= ((instrument.price - instrument.purchase_price) / instrument.purchase_price * 100).toFixed(1) %>%</td>
+                                  <% } else if (portfolio.id === 'existing' && instrument.purchase_price == 0) { %>
+                                    <td></td>
+                                  <% } %>
+                                </tr>
+                                <% if (instrument.comment) { %>
+                                  <tr>
+                                    <td colspan="2">Комментарий эксперта:</td>
+                                    <td colspan="8" style="word-break: break-all;">
+                                      <div class="preWrap"><%- instrument.comment %></div>
+                                    </td>
+                                  </tr>
+                                <% } else { %>
+                                  <tr>
+                                    <td></td>
+                                  </tr>
+                                <% } %>
+                              </tbody>
+                            <% }) %>
+                          </table>
+                        </div>
+                      <% } %>
+                      <% if (portfolio.core.instruments.alternative.length > 0) { %>
+                        <div class="table">
+                          <header>Альтернативные инвестиции:</header>
+                          <table>
+                            <thead>
+                              <tr class="space">
+                                <th style="width: 9%">Тикер/ISIN</th>
+                                <th style="width: 9%">Цена текущая</th>
+                                <% if (portfolio.id === 'existing') { %>
+                                  <th style="width: 9%">Цена покупки</th>
+                                <% } %>
+                                <% if (portfolio.id === 'expert') { %>
+                                  <th style="width: 9%">Процент ядра</th>
+                                <% } %>
+                                <th style="width: 11%">Кол-во бумаг</th>
+                                <th style="width: 11%">Сумма</th>
+                                <th style="width: 11%">Валюта покупки</th>
+                                <th style="width: 11%">Тип инструмента</th>
+                                <th style="width: 11%">Класс актива</th>
+                                <th style="width: 11%">География</th>
+                                <th style="width: 11%">Сектор экономики</th>
+                                <% if (portfolio.id === 'existing') { %>
+                                  <th style="width: 9%">Доходность</th>
+                                <% } %>
+                              </tr>
+                            </thead>
+                            <% portfolio.core.instruments.alternative.forEach(instrument => { %>
+                              <tbody class="space">
+                                <tr>
+                                  <td class="robotoFont"><%= instrument.name  %></td>
+                                  <td class="robotoFont"><%= instrument.price  %></td>
+                                  <% if (portfolio.id === 'existing') { %>
+                                    <td class="robotoFont"><%= instrument.purchase_price  %></td>
+                                  <% } %>
+                                  <% if (portfolio.id === 'expert') { %>
+                                    <td class="robotoFont"><%= instrument.percent %>%</td>
+                                  <% } %>
+                                  <td class="robotoFont"><%= instrument.number_papers  %></td>
+                                  <td class="robotoFont"><%= (instrument.price * instrument.number_papers).toFixed(0)  %></td>
+                                  <td><%= instrument.currency_one  %></td>
+                                  <td><%= instrument.instrument_type_one  %></td>
+                                  <td><%= instrument.class_one  %></td>
+                                  <td><%= instrument.country_one  %></td>
+                                  <td><%= instrument.section_one %></td>
+                                  <% if (portfolio.id === 'existing' && instrument.purchase_price > 0) { %>
+                                    <td><%= ((instrument.price - instrument.purchase_price) / instrument.purchase_price * 100).toFixed(1) %>%</td>
+                                  <% } else if (portfolio.id === 'existing' && instrument.purchase_price == 0) { %>
+                                    <td></td>
+                                  <% } %>
+                                </tr>
+                                <% if (instrument.comment) { %>
+                                  <tr>
+                                    <td colspan="2">Комментарий эксперта:</td>
+                                    <td colspan="8" style="word-break: break-all;">
+                                      <div class="preWrap"><%- instrument.comment %></div>
+                                    </td>
+                                  </tr>
+                                <% } else { %>
+                                  <tr>
+                                    <td></td>
+                                  </tr>
+                                <% } %>
+                              </tbody>
+                            <% }) %>
+                          </table>
+                        </div>
+                      <% } %>
+                      <div class="charts">
+                        <div class="chart space">
+                          <div class="chart--title">
+                            Структура портфеля по классам активов:
+                          </div>
+                          <div class="chart--container">
+                            <canvas id="<%= target.number %>myCanvas1<%= index %>"></canvas>
+                            <div id="<%= target.number %>myLegend1<%= index %>" class="legend"></div>
+                          </div>
+                        </div>
+                        <div class="chart space">
+                          <div class="chart--title">
+                            Структура портфеля по географии:
+                          </div>
+                          <div class="chart--container">
+                            <canvas id="<%= target.number %>myCanvas2<%= index %>"></canvas>
+                            <div id="<%= target.number %>myLegend2<%= index %>" class="legend"></div>
+                          </div>
+                        </div>
+                        <div class="chart space">
+                          <div class="chart--title">
+                            Структура портфеля по базовой валюте:
+                          </div>
+                          <div class="chart--container">
+                            <canvas id="<%= target.number %>myCanvas3<%= index %>"></canvas>
+                            <div id="<%= target.number %>myLegend3<%= index %>" class="legend"></div>
+                          </div>
+                        </div>
+                        <div class="chart space">
+                          <div class="chart--title">
+                            Структура портфеля по секторам экономики:
+                          </div>
+                          <div class="chart--container">
+                            <canvas id="<%= target.number %>myCanvas4<%= index %>"></canvas>
+                            <div id="<%= target.number %>myLegend4<%= index %>" class="legend"></div>
+                          </div>
+                        </div>
+                      </div>
+                    <% } %>
+                    </div>
+                    <% if (portfolio.tactic.selected) { %>
+                      <div class="section--title space" style="padding-top: 10px">Тактические идеи</div>
+                      <div class="section--container">
+                        <div class="table">
+                          <header></header>
+                          <table>
+                            <thead>
+                              <tr class="space">
+                                <th style="width: 10%">Тикер/ISIN</th>
+                                <th style="width: 10%">Цена текущая</th>
+                                <% if (portfolio.id === 'existing') { %>
+                                  <th style="width: 9%">Цена покупки</th>
+                                <% } %>
+                                <% if (portfolio.id === 'expert') { %>
+                                  <th style="width: 9%">Процент ядра</th>
+                                <% } %>
+                                <th style="width: 12%">Кол-во бумаг</th>
+                                <th style="width: 12%">Сумма</th>
+                                <th style="width: 12%">Валюта покупки</th>
+                                <th style="width: 12%">Тип инструмента</th>
+                                <th style="width: 12%">Класс актива</th>
+                                <th style="width: 12%">География</th>
+                                <th style="width: 12%">Сектор экономики</th>
+                                <% if (portfolio.id === 'existing') { %>
+                                  <th style="width: 9%">Доходность</th>
+                                <% } %>
+                              </tr>
+                            </thead>
+                            <% portfolio.tactic.instruments.forEach(instrument => { %>
+                              <tbody class="space">
+                                <tr>
+                                  <td class="robotoFont"><%= instrument.name  %></td>
+                                  <td class="robotoFont"><%= instrument.price  %></td>
+                                  <% if (portfolio.id === 'existing') { %>
+                                    <td class="robotoFont"><%= instrument.purchase_price  %></td>
+                                  <% } %>
+                                  <% if (portfolio.id === 'expert') { %>
+                                    <td class="robotoFont"><%= instrument.percent %>%</td>
+                                  <% } %>
+                                  <td class="robotoFont"><%= instrument.number_papers  %></td>
+                                  <td class="robotoFont"><%= (instrument.price * instrument.number_papers).toFixed(0)  %></td>
+                                  <td><%= instrument.currency_one  %></td>
+                                  <td><%= instrument.instrument_type_one  %></td>
+                                  <td><%= instrument.class_one  %></td>
+                                  <td><%= instrument.country_one  %></td>
+                                  <td><%= instrument.section_one %></td>
+                                  <% if (portfolio.id === 'existing' && instrument.purchase_price > 0) { %>
+                                    <td><%= ((instrument.price - instrument.purchase_price) / instrument.purchase_price * 100).toFixed(1) %>%</td>
+                                  <% } else if (portfolio.id === 'existing' && instrument.purchase_price == 0) { %>
+                                    <td></td>
+                                  <% } %>
+                                </tr>
+                                <% if (instrument.comment) { %>
+                                  <tr>
+                                    <td colspan="2">Комментарий эксперта:</td>
+                                    <td colspan="8" style="word-break: break-all;">
+                                      <div class="preWrap"><%- instrument.comment %></div>
+                                    </td>
+                                  </tr>
+                                <% } else { %>
+                                  <tr>
+                                    <td></td>
+                                  </tr>
+                                <% } %>
+                              </tbody>
+                            <% }) %>
+                          </table>
+                        </div>
+                      </div>
+                    <% } %>
+                    <% if (portfolio.comments.common) { %>
+                      <div class="section--title space" style="font-size: 14px; padding-top: 10px;">Комментарий эксперта</div>
+                      <div class="section--container">
+                        <div class="comment preWrap robotoFont asd"><%- portfolio.comments.common %></div>
+                      </div>
+                    <% } %>
+                  </div>
+                </div>
+              </div>
+            <% } %>
+          <% }) %>
+        <% }) %>
+
+        <div class="comment space">
+          <header>Итоговый комментарий эксперта</header>
+          <div class="comment--container">
+            <div class="content preWrap robotoFont"><%- comment %></div>
+          </div>
+        </div>
+        <% targets.forEach(target => { %>
+          <div class="chart space">
+            <header>График пополнений: (Цель <%= target.number %>)</header>
+            <div style="margin: 20px 0 0 0; font-size: 12px; font-weight: 300; line-height: 14px;">
+              Предлагаем для удобства график пополнения вашей финансовой цели. Вы можете отмечать «галочками» те внесения, которые сделаны. Справа в графике вы можете писать суммы, которые вы уже накопили на счете. Пусть ваши финансовые цели будут достигнуты!
+            </div>
+            <div class="chart--container">
+              <div class="content">
+                <table>
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th style="text-align: left; width: 28%;">Дата пополнения</th>
+                      <th style="text-align: left; width: 24%;">Реком. сумма пополнений</th>
+                      <th style="text-align: left; width: 24%;">Факт. сумма пополнений</th>
+                      <th style="text-align: left; width: 24%;">Накопленная сумма на счете</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <% target.chart.forEach(element => { %>
+                    <tr>
+                      <td>
+                        <div style="width: 10px; height: 10px; border: 1px solid rgb(83, 83, 83);"></div>
+                      </td>
+                      <td style="text-align: left; padding-left: 0; font-size: 8px;" class="robotoFont"><%= element.date %></td>
+                      <td style="text-align: left; padding-left: 0; font-size: 8px;" class="robotoFont"><%= element.amount %> <%= element.sign %></td>
+                      <td style="text-align: left; padding-left: 0; font-size: 8px;" class="robotoFont">_______________________</td>
+                      <td style="text-align: left; padding-left: 0; font-size: 8px;" class="robotoFont">_______________________</td>
+                    </tr>
+                  <% }) %>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        <% }) %>
+        <% if (!onepage) { %>
+          <div class="info avoidAlways">
+            <header>Юридическая информация</header>
+            <div class="info--container">
+              <div class="content">
+                <div class="content--container">
+                  <% info.forEach(element => { %>
+                    <div class="el">
+                      <div><%= element %></div>
+                    </div>
+                  <% }) %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% } else { %>
+          <div class="info">
+            <header>Юридическая информация</header>
+            <div class="info--container">
+              <div class="content">
+                <div class="content--container">
+                  <% info.forEach(element => { %>
+                    <div class="el">
+                      <div><%= element %></div>
+                    </div>
+                  <% }) %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% } %>
+      </main>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"></script>
+    <script>
+      function createSpaces() {
+        var page = 1;
+        $('.space').toArray().forEach(function(element) {
+          while ($(element).offset().top / (802 * page) > 1) {
+            page += 1;
+          }
+          if (802 * page > $(element).offset().top && 802 * page < $(element).offset().top + $(element).outerHeight(true)) {
+            // $(element).css('background', 'green');
+            if ($(element).offset().top === $($('.space').toArray()[index - 1]).offset().top) {
+              $($('.space').toArray()[index - 1]).before('<div class="empty" style="width: 100%; height: ' + (802 * page - $(element).offset().top + 15) + 'px;"></div>')
+            } else {
+              $(element).before('<div class="empty" style="width: 100%; height: ' + (802 * page - $(element).offset().top + 15) + 'px;"></div>')
+            }
+          }
+        });
+      }
+    </script>
+    <script>
+      WebFont.load({
+        google: {
+          families: ['Raleway:400,500,600,700:latin,cyrillic', 'Montserrat:300,400,700:latin,cyrillic']
+        },
+        active: function() {
+          <% if (!onepage) { %>
+            createSpaces();
+          <% } else { %>
+            $('.pdf').attr('data-height', $('.pdf').height());
+          <% } %>
+        }
+      });
+    </script>
+    <script>
+      function create(w, t, d, i, colors) {
+        var myLegend = document.getElementById(w + i);
+        var myCanvas = document.getElementById(t + i);
+        if (!myLegend || !myCanvas) return;
+        myCanvas.width = 500;
+        myCanvas.height = 500;
+        var myVinyls = d;
+
+        var ctx = myCanvas.getContext("2d");
+        function drawPieSlice(
+          ctx,
+          centerX,
+          centerY,
+          radius,
+          startAngle,
+          endAngle,
+          color
+        ) {
+          ctx.fillStyle = color;
+          ctx.beginPath();
+          ctx.moveTo(centerX, centerY);
+          ctx.arc(centerX, centerY, radius, startAngle, endAngle);
+          ctx.closePath();
+          ctx.fill();
+        }
+        var Piechart = function (options) {
+          this.options = options;
+          this.canvas = options.canvas;
+          this.ctx = this.canvas.getContext("2d");
+          this.colors = options.colors;
+
+          this.draw = function () {
+            var total_value = 0;
+            var color_index = 0;
+            for (var categ in this.options.data) {
+              var val = Number(this.options.data[categ]);
+              total_value += val;
+            }
+
+            var start_angle = 0;
+            for (categ in this.options.data) {
+              val = Number(this.options.data[categ]);
+              var slice_angle = (2 * Math.PI * val) / total_value;
+
+              drawPieSlice(
+                this.ctx,
+                this.canvas.width / 2,
+                this.canvas.height / 2,
+                Math.min(this.canvas.width / 2, this.canvas.height / 2),
+                start_angle,
+                start_angle + slice_angle,
+                this.colors[color_index % this.colors.length]
+              );
+
+              start_angle += slice_angle;
+              color_index++;
+            }
+
+            if (this.options.doughnutHoleSize) {
+              drawPieSlice(
+                this.ctx,
+                this.canvas.width / 2,
+                this.canvas.height / 2,
+                this.options.doughnutHoleSize *
+                  Math.min(this.canvas.width / 2, this.canvas.height / 2),
+                0,
+                2 * Math.PI,
+                "#ff0000"
+              );
+            }
+            start_angle = 0;
+            for (categ in this.options.data) {
+              val = Number(this.options.data[categ]);
+              slice_angle = (2 * Math.PI * val) / total_value;
+              var pieRadius = Math.min(
+                this.canvas.width / 2,
+                this.canvas.height / 2
+              );
+              var labelX =
+                this.canvas.width / 2 +
+                (pieRadius / 2) * Math.cos(start_angle + slice_angle / 2) -
+                10;
+              var labelY =
+                this.canvas.height / 2 +
+                (pieRadius / 2) * Math.sin(start_angle + slice_angle / 2) +
+                5;
+
+              if (this.options.doughnutHoleSize) {
+                var offset = (pieRadius * this.options.doughnutHoleSize) / 2;
+                labelX =
+                  this.canvas.width / 2 +
+                  (offset + pieRadius / 2) *
+                    Math.cos(start_angle + slice_angle / 2);
+                labelY =
+                  this.canvas.height / 2 +
+                  (offset + pieRadius / 2) *
+                    Math.sin(start_angle + slice_angle / 2);
+              }
+
+              start_angle += slice_angle;
+            }
+            if (this.options.legend) {
+              color_index = 0;
+              var legendHTML = "";
+              for (categ in this.options.data) {
+                if (colors.length === 2) {
+                  legendHTML +=
+                    "<div style='margin-bottom: 5px;'><span style='display:inline-block;position:relative;top:-2px;margin-right:5px;width:12px;height:12px;border-radius:50%;background-color:" +
+                    this.colors[color_index++] +
+                    ";'>&nbsp;</span> " +
+                    categ +
+                    " " +
+                    this.options.data[categ] +
+                    "%</div>";
+                } else {
+                  legendHTML +=
+                    "<div style='display: flex; display: -webkit-box; align-items: center; margin-bottom: 5px; max-width: 100%; vertical-align: top; margin-right: 10px;'><div style='margin-right: 5px; min-width: 8px; width: 8px; height: 8px; border-radius: 50%; background-color:" +
+                    this.colors[color_index++] +
+                    ";'>&nbsp;</div> <div style=''>" +
+                    categ +
+                    " " +
+                    this.options.data[categ] +
+                    "%</div></div>";
+                }
+              }
+              this.options.legend.innerHTML = legendHTML;
+            }
+          };
+        };
+        var myPiechart = new Piechart({
+          canvas: myCanvas,
+          data: myVinyls,
+          colors: colors,
+          legend: myLegend,
+        });
+        myPiechart.draw();
+      };
+    </script>
+    <% targets.forEach(target => { %>
+      <% target.portfolios.forEach((portfolio, index) => { %>
+        <% if (target.status[portfolio.id]) { %>
+          <script>
+            var colors = ["#FCC033", "#369B5F", "#F44336", "#5C6BC0", "#FD9500", "#9B5DE5", "#5DE589", "#E57B32", "#32DEE5", "#DE32E5", "#A4E51C", "#787EFF", "#50AA9B", "#FF7886", "#E000FF", "#FFCACA", "#93B3FF", "#FF00D8", "#FF0074", "FFF861"];
+            var test0 = <%- JSON.stringify(portfolio.ct_percents) %>;
+            var test1 = <%- JSON.stringify(portfolio.core.class_percents) %>;
+            var test2 = <%- JSON.stringify(portfolio.core.country_percents) %>;
+            var test3 = <%- JSON.stringify(portfolio.core.currency_percents) %>;
+            var test4 = <%- JSON.stringify(portfolio.core.section_percents) %>;
+            var test5 = <%- JSON.stringify(portfolio.core.conserv_percents) %>;
+            var test6 = <%- JSON.stringify(portfolio.core.stock_percents) %>;
+            var index = <%- JSON.stringify(index) %>;
+            var number = <%- JSON.stringify(target.number) %>;
+
+            create(number + "myLegend0", number + "myCanvas0", test0, index, colors);
+            create(number + "myLegend1", number + "myCanvas1", test1, index, colors);
+            create(number + "myLegend2", number + "myCanvas2", test2, index, colors);
+            create(number + "myLegend3", number + "myCanvas3", test3, index, colors);
+            create(number + "myLegend4", number + "myCanvas4", test4, index, colors);
+            // create(number + "myLegend5", number + "myCanvas5", test5, index, colors);
+            // create(number + "myLegend6", number + "myCanvas6", test6, index, colors);
+          </script>
+        <% } %>
+      <% }) %>
+    <% }) %>
+  </body>
+</html>

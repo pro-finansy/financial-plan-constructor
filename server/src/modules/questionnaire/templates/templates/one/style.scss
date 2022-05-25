@@ -1,0 +1,502 @@
+@import url("file:///Users/ofswg/Desktop/currentProjects/finance2.0/server/controllers/report/templates/static/font.css");
+@import url("../static/font.css");
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway", sans-serif;
+}
+
+.pdf {
+  padding-top: 40px;
+  width: 595px;
+  background: #fff;
+  height: fit-content;
+  > header {
+    background: linear-gradient(272.18deg, #006a44 0%, #058255 100%);
+    font-weight: 800;
+    padding: 30px 45px;
+    position: relative;
+    text-transform: uppercase;
+    .name {
+      font-size: 28px;
+      line-height: 32px;
+      margin-bottom: 6px;
+      color: #ffffff;
+    }
+    .description {
+      font-size: 21px;
+      line-height: 25px;
+      color: #004d31;
+    }
+    img {
+      position: absolute;
+      top: -30px;
+      right: 25px;
+      width: 135px;
+    }
+  }
+  main {
+    padding: 0 45px;
+    .users {
+      margin: 25px 0;
+      display: flex;
+      .user {
+        width: 50%;
+        position: relative;
+        &--title {
+          font-weight: 800;
+          font-size: 16px;
+          line-height: 19px;
+        }
+        &--container {
+          margin-top: 10px;
+          &.expert {
+            width: 60%;
+          }
+          .element {
+            margin-bottom: 10px;
+            display: flex;
+            div {
+              font-size: 10px;
+              line-height: 12px;
+              &.value {
+                margin-right: 10px;
+              }
+              &:first-child {
+                font-weight: bold;
+              }
+            }
+          }
+        }
+        &--more {
+          img {
+            width: 136px;
+            height: 136px;
+            object-fit: cover;
+            position: absolute;
+            bottom: 3px;
+            right: -45px;
+          }
+          .line {
+            width: 118%;
+            height: 2px;
+            background-color: #02724a;
+            border-radius: 1px 0 0 1px;
+          }
+        }
+      }
+    }
+    .targets {
+      &--container {
+        .target {
+          margin-top: 25px;
+        }
+      }
+    }
+    .targets,
+    .portfolio,
+    .comment,
+    .chart,
+    .info {
+      padding-top: 30px;
+      > header {
+        padding: 15px 25px;
+        background: #058255;
+        border-radius: 15px;
+        font-weight: 800;
+        font-size: 18px;
+        // line-height: 23px;
+        color: #ffffff;
+      }
+      &--container {
+        padding-top: 30px;
+        .target,
+        .section,
+        .content {
+          padding: 20px 25px;
+          border: 1px dashed #369b5f;
+          border-radius: 15px;
+          &--title {
+            font-weight: 800;
+            font-size: 20px;
+            // line-height: 23px;
+            color: #000000;
+          }
+          &--container {
+            .element {
+              display: flex;
+              margin-top: 10px;
+              .pre {
+                font-size: 10px;
+                line-height: 12px;
+              }
+              > div {
+                font-size: 10px;
+                line-height: 12px;
+                &:first-child {
+                  font-weight: bold;
+                  min-width: 125px;
+                  width: 125px;
+                  margin-right: 20px;
+                }
+                &:last-child {
+                  word-wrap: break-word;
+                  max-width: 308px;
+                  > div {
+                    margin-bottom: 15px;
+                    &:last-child {
+                      margin-bottom: 0;
+                    }
+                    img {
+                      width: 308px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .portfolio {
+      &.student {
+        > header {
+          background-color: #5c6bc0;
+          color: #fff;
+        }
+        .portfolio--container {
+          .section {
+            border-color: #5c6bc0;
+          }
+        }
+      }
+      &.expert {
+        > header {
+          background-color: #941e76;
+          color: #fff;
+        }
+        .portfolio--container {
+          .section {
+            border-color: #941e76;
+          }
+        }
+      }
+      > header {
+        background: #fcc033;
+        color: #000;
+      }
+      &--container {
+        .section {
+          border-color: #fcc033;
+          &--container {
+            .title {
+              font-size: 10px;
+              padding-top: 15px;
+              font-weight: bold;
+              line-height: 12px;
+            }
+            .description {
+              font-size: 10px;
+              font-style: italic;
+              line-height: 12px;
+              padding-top: 10px;
+            }
+            .table {
+              padding-top: 10px;
+              header {
+                font-size: 9px;
+                line-height: 12px;
+                font-weight: bold;
+              }
+              table {
+                margin-top: 5px;
+                width: 100%;
+                tr {
+                  td,
+                  th {
+                    font-size: 6px;
+                    line-height: 8px;
+                    padding: 4px;
+                    vertical-align: top;
+                    text-align: left;
+                  }
+                }
+                thead {
+                  tr {
+                    th {
+                      font-weight: bold;
+                    }
+                  }
+                }
+                tbody {
+                  tr {
+                    &:first-child {
+                      background: rgba(0, 0, 0, 0.1);
+                    }
+                  }
+                }
+              }
+            }
+            .element {
+              .chart {
+                padding: 0;
+                margin: 0;
+                display: flex;
+                align-items: center;
+                .legend {
+                  margin-left: 30px;
+                  margin-bottom: 0;
+                  > div {
+                    font-size: 8px;
+                    line-height: 9px;
+                    &:last-child {
+                      margin-bottom: 0 !important;
+                    }
+                  }
+                }
+              }
+            }
+            .charts {
+              display: flex;
+              justify-content: space-between;
+              padding-top: 15px;
+              .chart {
+                width: 50%;
+                margin: 0;
+                padding-top: 0;
+                padding-bottom: 10px;
+                &--title {
+                  font-weight: bold;
+                  font-size: 10px;
+                  line-height: 12px;
+                  height: 30px;
+                  vertical-align: top;
+                }
+                &--container {
+                  padding-top: 0;
+                  font-size: 11px;
+                  width: 100%;
+                  font-size: 8px;
+                  line-height: 9px;
+                  text-align: center;
+                  .legend {
+                    margin-top: 15px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .comment {
+      header {
+        background-color: #f44336;
+        color: #fff;
+      }
+      &--container {
+        .content {
+          border-color: #f44336;
+          font-size: 10px;
+          line-height: 12px;
+        }
+      }
+    }
+    .chart,
+    .info {
+      header {
+        background-color: rgba(0, 0, 0, 0.10);
+        color: #000;
+      }
+      &--container {
+        .content {
+          border-color: rgba(0, 0, 0, 0.25);
+          font-size: 10px;
+          line-height: 12px;
+          &--container {
+            .el {
+              font-size: 10px;
+              line-height: 12px;
+              margin-bottom: 10px;
+            }
+          }
+          table {
+            width: 100%;
+            text-align: center;
+            th {
+              padding-bottom: 5px;
+            }
+            tbody {
+              tr {
+                td {
+                  padding: 5px 10px;
+                }
+                &:nth-child(2n - 1) {
+                  td {
+                    &:first-child { border-radius: 3px 0 0 3px; }
+                    &:last-child { border-radius: 0 3px 3px 0; }
+                    background-color: #E7E7E7;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+canvas {
+  width: 100px;
+  height: 100px;
+}
+
+// .avoid {
+//   page-break-before: always;
+//   padding-top: 0px;
+// }
+
+.avoidAlways {
+  page-break-before: always;
+  padding-top: 30px;
+}
+
+.preWrap {
+  white-space: pre-wrap;
+}
+
+a {
+  text-decoration: none;
+}

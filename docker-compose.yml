@@ -1,0 +1,10 @@
+version: '3'
+services:
+  finance:
+    image: finance:latest
+    container_name: finance
+    restart: always
+    ports: 
+      - "3000-3002:3000-3002"
+    volumes:
+      - "./.env:/opt/app/.env"

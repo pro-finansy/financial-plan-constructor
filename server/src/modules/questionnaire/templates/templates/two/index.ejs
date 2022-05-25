@@ -1,0 +1,1777 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Questionnaire</title>
+    <style>
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway", sans-serif;
+}
+
+.robotoFont {
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: -0.1px;
+  font-weight: 400;
+}
+.robotoFontStrong {
+  font-weight: 700;
+}
+
+.pdf {
+  width: 595px;
+  background: #fff;
+}
+
+.pdf > header {
+  height: 175px;
+  background: #000;
+  font-weight: 800;
+  padding: 30px 30px 30px 200px;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.pdf > header .name {
+  font-size: 26px;
+  line-height: 33px;
+  color: #ffffff;
+}
+
+.pdf > header > .description {
+  font-size: 18px;
+  line-height: 25px;
+  color: #FFCC00;
+}
+
+.pdf > header img {
+  position: absolute;
+  top: -2px;
+  left: 25px;
+  width: 150px;
+}
+
+.pdf > header footer {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pdf > header footer .description {
+  width: 80%;
+}
+
+.pdf > header footer .description > div {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 49%;
+  text-transform: none;
+  font-weight: 500;
+  font-size: 8px;
+  line-height: 10px;
+  color: #CDCACA;
+}
+
+.pdf > header footer .description > div .circle {
+  margin-right: 5px;
+  width: 4px;
+  height: 4px;
+  background-color: #CDCACA;
+  border-radius: 2px;
+}
+
+.pdf > header footer .logo {
+  width: 20%;
+}
+
+.pdf > header footer .logo .title {
+  font-weight: 900;
+  font-size: 11px;
+  line-height: 10px;
+  color: #FFCC00;
+}
+
+.pdf > header footer .logo .text {
+  font-weight: 500;
+  font-size: 7px;
+  line-height: 8px;
+  text-transform: none;
+  color: #CDCACA;
+}
+
+.pdf main .users {
+  margin: 25px 0 0;
+  padding: 0 45px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.pdf main .users .user {
+  position: relative;
+  width: 50%;
+}
+
+.pdf main .users .user:first-child {
+  width: 46%;
+}
+
+.pdf main .users .user--title {
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.pdf main .users .user--container {
+  margin-top: 10px;
+}
+
+.pdf main .users .user--container.expert {
+  width: 65%;
+}
+
+.pdf main .users .user--container .element {
+  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.pdf main .users .user--container .element div {
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.pdf main .users .user--container .element div.value {
+  margin-right: 10px;
+}
+
+.pdf main .users .user--container .element div:first-child {
+  font-weight: bold;
+}
+
+.pdf main .users .user--more img {
+  width: 130px;
+  position: absolute;
+  bottom: 3px;
+  right: -45px;
+}
+
+.pdf main .users .user--more .line {
+  width: 118%;
+  height: 2px;
+  background-color: #000000;
+  border-radius: 1px 0 0 1px;
+}
+
+.pdf main .targets,
+.pdf main .portfolio,
+.pdf main .comment,
+.pdf main .chart,
+.pdf main .info {
+  margin-top: 25px;
+}
+
+.pdf main .targets > header,
+.pdf main .portfolio > header,
+.pdf main .comment > header,
+.pdf main .chart > header,
+.pdf main .info > header {
+  padding: 15px 45px;
+  background: #000;
+  font-weight: 800;
+  font-size: 18px;
+  color: #FFCC00;
+}
+
+.pdf main .targets--container,
+.pdf main .portfolio--container,
+.pdf main .comment--container,
+.pdf main .chart--container,
+.pdf main .info--container {
+  margin-top: 19px;
+}
+
+.pdf main .targets--container .target,
+.pdf main .targets--container .section,
+.pdf main .targets--container .content,
+.pdf main .portfolio--container .target,
+.pdf main .portfolio--container .section,
+.pdf main .portfolio--container .content,
+.pdf main .comment--container .target,
+.pdf main .comment--container .section,
+.pdf main .comment--container .content,
+.pdf main .chart--container .target,
+.pdf main .chart--container .section,
+.pdf main .chart--container .content,
+.pdf main .info--container .target,
+.pdf main .info--container .section,
+.pdf main .info--container .content {
+  margin: 19px 19px 0;
+  padding: 15px 15px 0;
+  border: 1px dashed #FFCC00;
+  border-radius: 15px;
+}
+
+.pdf main .targets--container .target--title,
+.pdf main .targets--container .section--title,
+.pdf main .targets--container .content--title,
+.pdf main .portfolio--container .target--title,
+.pdf main .portfolio--container .section--title,
+.pdf main .portfolio--container .content--title,
+.pdf main .comment--container .target--title,
+.pdf main .comment--container .section--title,
+.pdf main .comment--container .content--title,
+.pdf main .chart--container .target--title,
+.pdf main .chart--container .section--title,
+.pdf main .chart--container .content--title,
+.pdf main .info--container .target--title,
+.pdf main .info--container .section--title,
+.pdf main .info--container .content--title {
+  font-weight: 800;
+  font-size: 20px;
+  color: #000000;
+}
+
+.pdf main .targets--container .target--container .element,
+.pdf main .targets--container .section--container .element,
+.pdf main .targets--container .content--container .element,
+.pdf main .portfolio--container .target--container .element,
+.pdf main .portfolio--container .section--container .element,
+.pdf main .portfolio--container .content--container .element,
+.pdf main .comment--container .target--container .element,
+.pdf main .comment--container .section--container .element,
+.pdf main .comment--container .content--container .element,
+.pdf main .chart--container .target--container .element,
+.pdf main .chart--container .section--container .element,
+.pdf main .chart--container .content--container .element,
+.pdf main .info--container .target--container .element,
+.pdf main .info--container .section--container .element,
+.pdf main .info--container .content--container .element {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.pdf main .targets--container .target--container .element .pre,
+.pdf main .targets--container .section--container .element .pre,
+.pdf main .targets--container .content--container .element .pre,
+.pdf main .portfolio--container .target--container .element .pre,
+.pdf main .portfolio--container .section--container .element .pre,
+.pdf main .portfolio--container .content--container .element .pre,
+.pdf main .comment--container .target--container .element .pre,
+.pdf main .comment--container .section--container .element .pre,
+.pdf main .comment--container .content--container .element .pre,
+.pdf main .chart--container .target--container .element .pre,
+.pdf main .chart--container .section--container .element .pre,
+.pdf main .chart--container .content--container .element .pre,
+.pdf main .info--container .target--container .element .pre,
+.pdf main .info--container .section--container .element .pre,
+.pdf main .info--container .content--container .element .pre {
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.pdf main .targets--container .target--container .element > div,
+.pdf main .targets--container .section--container .element > div,
+.pdf main .targets--container .content--container .element > div,
+.pdf main .portfolio--container .target--container .element > div,
+.pdf main .portfolio--container .section--container .element > div,
+.pdf main .portfolio--container .content--container .element > div,
+.pdf main .comment--container .target--container .element > div,
+.pdf main .comment--container .section--container .element > div,
+.pdf main .comment--container .content--container .element > div,
+.pdf main .chart--container .target--container .element > div,
+.pdf main .chart--container .section--container .element > div,
+.pdf main .chart--container .content--container .element > div,
+.pdf main .info--container .target--container .element > div,
+.pdf main .info--container .section--container .element > div,
+.pdf main .info--container .content--container .element > div {
+  font-size: 9px;
+  line-height: 11px;
+}
+
+.pdf main .targets--container .target--container .element > div:first-child,
+.pdf main .targets--container .section--container .element > div:first-child,
+.pdf main .targets--container .content--container .element > div:first-child,
+.pdf main .portfolio--container .target--container .element > div:first-child,
+.pdf main .portfolio--container .section--container .element > div:first-child,
+.pdf main .portfolio--container .content--container .element > div:first-child,
+.pdf main .comment--container .target--container .element > div:first-child,
+.pdf main .comment--container .section--container .element > div:first-child,
+.pdf main .comment--container .content--container .element > div:first-child,
+.pdf main .chart--container .target--container .element > div:first-child,
+.pdf main .chart--container .section--container .element > div:first-child,
+.pdf main .chart--container .content--container .element > div:first-child,
+.pdf main .info--container .target--container .element > div:first-child,
+.pdf main .info--container .section--container .element > div:first-child,
+.pdf main .info--container .content--container .element > div:first-child {
+  font-weight: bold;
+  min-width: 125px;
+  width: 125px;
+  margin-right: 20px;
+}
+
+.pdf main .targets--container .target--container .element > div:last-child,
+.pdf main .targets--container .section--container .element > div:last-child,
+.pdf main .targets--container .content--container .element > div:last-child,
+.pdf main .portfolio--container .target--container .element > div:last-child,
+.pdf main .portfolio--container .section--container .element > div:last-child,
+.pdf main .portfolio--container .content--container .element > div:last-child,
+.pdf main .comment--container .target--container .element > div:last-child,
+.pdf main .comment--container .section--container .element > div:last-child,
+.pdf main .comment--container .content--container .element > div:last-child,
+.pdf main .chart--container .target--container .element > div:last-child,
+.pdf main .chart--container .section--container .element > div:last-child,
+.pdf main .chart--container .content--container .element > div:last-child,
+.pdf main .info--container .target--container .element > div:last-child,
+.pdf main .info--container .section--container .element > div:last-child,
+.pdf main .info--container .content--container .element > div:last-child {
+  word-wrap: break-word;
+  max-width: 350px;
+  min-width: 350px;
+}
+
+.pdf main .targets--container .target--container .element > div:last-child > div,
+.pdf main .targets--container .section--container .element > div:last-child > div,
+.pdf main .targets--container .content--container .element > div:last-child > div,
+.pdf main .portfolio--container .target--container .element > div:last-child > div,
+.pdf main .portfolio--container .section--container .element > div:last-child > div,
+.pdf main .portfolio--container .content--container .element > div:last-child > div,
+.pdf main .comment--container .target--container .element > div:last-child > div,
+.pdf main .comment--container .section--container .element > div:last-child > div,
+.pdf main .comment--container .content--container .element > div:last-child > div,
+.pdf main .chart--container .target--container .element > div:last-child > div,
+.pdf main .chart--container .section--container .element > div:last-child > div,
+.pdf main .chart--container .content--container .element > div:last-child > div,
+.pdf main .info--container .target--container .element > div:last-child > div,
+.pdf main .info--container .section--container .element > div:last-child > div,
+.pdf main .info--container .content--container .element > div:last-child > div {
+  margin-bottom: 15px;
+}
+
+.pdf main .targets--container .target--container .element > div:last-child > div:last-child,
+.pdf main .targets--container .section--container .element > div:last-child > div:last-child,
+.pdf main .targets--container .content--container .element > div:last-child > div:last-child,
+.pdf main .portfolio--container .target--container .element > div:last-child > div:last-child,
+.pdf main .portfolio--container .section--container .element > div:last-child > div:last-child,
+.pdf main .portfolio--container .content--container .element > div:last-child > div:last-child,
+.pdf main .comment--container .target--container .element > div:last-child > div:last-child,
+.pdf main .comment--container .section--container .element > div:last-child > div:last-child,
+.pdf main .comment--container .content--container .element > div:last-child > div:last-child,
+.pdf main .chart--container .target--container .element > div:last-child > div:last-child,
+.pdf main .chart--container .section--container .element > div:last-child > div:last-child,
+.pdf main .chart--container .content--container .element > div:last-child > div:last-child,
+.pdf main .info--container .target--container .element > div:last-child > div:last-child,
+.pdf main .info--container .section--container .element > div:last-child > div:last-child,
+.pdf main .info--container .content--container .element > div:last-child > div:last-child {
+  margin-bottom: 0;
+}
+
+.pdf main .targets--container .target--container .element > div:last-child > div img,
+.pdf main .targets--container .section--container .element > div:last-child > div img,
+.pdf main .targets--container .content--container .element > div:last-child > div img,
+.pdf main .portfolio--container .target--container .element > div:last-child > div img,
+.pdf main .portfolio--container .section--container .element > div:last-child > div img,
+.pdf main .portfolio--container .content--container .element > div:last-child > div img,
+.pdf main .comment--container .target--container .element > div:last-child > div img,
+.pdf main .comment--container .section--container .element > div:last-child > div img,
+.pdf main .comment--container .content--container .element > div:last-child > div img,
+.pdf main .chart--container .target--container .element > div:last-child > div img,
+.pdf main .chart--container .section--container .element > div:last-child > div img,
+.pdf main .chart--container .content--container .element > div:last-child > div img,
+.pdf main .info--container .target--container .element > div:last-child > div img,
+.pdf main .info--container .section--container .element > div:last-child > div img,
+.pdf main .info--container .content--container .element > div:last-child > div img {
+  width: 308px;
+}
+
+.pdf main .portfolio.student > header {
+  color: #27AB5D;
+}
+
+.pdf main .portfolio.student .portfolio--container .section {
+  border-color: #27AB5D;
+}
+
+.pdf main .portfolio.expert > header {
+  color: #FF8B22;
+}
+
+.pdf main .portfolio.expert .portfolio--container .section {
+  border-color: #FF8B22;
+}
+
+.pdf main .portfolio > header {
+  background: #000;
+}
+
+.pdf main .portfolio .description {
+  font-size: 10px;
+  line-height: 12px;
+  margin: 20px 45px 0;
+}
+
+.pdf main .portfolio--container .section {
+  border-color: #fcc033;
+}
+
+.pdf main .portfolio--container .section--container .title {
+  font-size: 10px;
+  padding-top: 15px;
+  font-weight: bold;
+  line-height: 12px;
+}
+
+.pdf main .portfolio--container .section--container .comment {
+  font-size: 9px;
+}
+
+.pdf main .portfolio--container .section--container .description {
+  font-size: 10px;
+  font-style: italic;
+  line-height: 12px;
+}
+
+.pdf main .portfolio--container .section .table {
+  margin-top: 5px;
+}
+
+.pdf main .portfolio--container .section .table .header {
+  font-size: 15px;
+  line-height: 15px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.pdf main .portfolio--container .section .table table {
+  margin-top: 5px;
+  width: 100%;
+}
+
+.pdf main .portfolio--container .section .table table tr td,
+.pdf main .portfolio--container .section .table table tr th {
+  font-size: 7px;
+  line-height: 9px;
+  padding: 4px;
+  vertical-align: top;
+  text-align: left;
+}
+
+.pdf main .portfolio--container .section .table table thead tr th {
+  font-weight: bold;
+}
+
+.pdf main .portfolio--container .section .table table tbody tr:first-child td {
+  background: rgba(0, 0, 0, 0.1);
+  border-right: 1px solid #E5E5E5;
+}
+
+.pdf main .portfolio--container .section .table table tbody.tableComment tr:first-child td {
+  background-color: transparent;
+  border-right: none;
+  font-size: 8px;
+  font-weight: 600 !important;
+}
+
+.pdf main .portfolio--container .section--container .element .chart {
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pdf main .portfolio--container .section--container .element .chart .legend {
+  margin-left: 30px;
+  margin-bottom: 0;
+}
+
+.pdf main .portfolio--container .section--container .element .chart .legend > div {
+  font-size: 8px;
+  line-height: 9px;
+}
+
+.pdf main .portfolio--container .section--container .element .chart .legend > div:last-child {
+  margin-bottom: 0 !important;
+}
+
+.pdf main .portfolio--container .section--container .charts {
+  display: flex;
+  display: -webkit-box;
+  margin-bottom: 5px;
+}
+
+.pdf main .portfolio--container .section--container .charts .chart123 {
+  margin: 0;
+  padding: 0;
+  width: 50%;
+  vertical-align: top;
+}
+
+.pdf main .portfolio--container .section--container .charts .chart123 .chart--title {
+  padding: 0;
+  margin: 0;
+  font-weight: bold; 
+  font-size: 10px;
+  line-height: 10px;
+  height: 30px;
+  vertical-align: top;
+  text-align: center;
+}
+
+.pdf main .portfolio--container .section--container .charts .chart123 .chart--container {
+  padding: 0;
+  margin: 0;
+  font-size: 11px;
+  width: 100%;
+  font-size: 8px;
+  line-height: 9px;
+  text-align: center;
+}
+
+.pdf main .portfolio--container .section--container .charts .chart123 .chart--container .legend {
+  padding: 0;
+  margin: 0;
+  margin-top: 15px;
+}
+
+.pdf main .comment header {
+  background-color: #000;
+  color: #FFCC00;
+}
+
+.pdf main .comment--container .content {
+  border-color: #f44336;
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.pdf main .chart header,
+.pdf main .info header {
+  background-color: #000;
+  color: #FFCC00;
+}
+
+.pdf main .chart--container .content,
+.pdf main .info--container .content {
+  border-color: rgba(0, 0, 0, 0.25);
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.pdf main .chart--container .content--container .el,
+.pdf main .info--container .content--container .el {
+  font-size: 10px;
+  line-height: 12px;
+  margin-bottom: 10px;
+}
+
+.pdf main .chart--container .content table,
+.pdf main .info--container .content table {
+  width: 100%;
+  text-align: center;
+}
+
+.pdf main .chart--container .content table th,
+.pdf main .info--container .content table th {
+  padding-bottom: 5px;
+}
+
+.pdf main .chart--container .content table tbody tr td,
+.pdf main .info--container .content table tbody tr td {
+  padding: 5px 10px;
+}
+
+.pdf main .chart--container .content table tbody:nth-child(2n - 1) tr td,
+.pdf main .info--container .content table tbody tr:nth-child(2n - 1) td {
+  background-color: #E7E7E7;
+}
+
+.pdf main .chart--container .content table tbody.tableComment tr:nth-child(2n - 1) td,
+.pdf main .info--container .content table tbody.tableComment tr:nth-child(2n - 1) td {
+  background-color: #fff;
+}
+
+.pdf main .chart--container .content table tbody tr:nth-child(2n - 1) td:first-child,
+.pdf main .info--container .content table tbody tr:nth-child(2n - 1) td:first-child {
+  border-radius: 3px 0 0 3px;
+}
+
+.pdf main .chart--container .content table tbody tr:nth-child(2n - 1) td:last-child,
+.pdf main .info--container .content table tbody tr:nth-child(2n - 1) td:last-child {
+  border-radius: 0 3px 3px 0;
+}
+
+canvas {
+  padding: 0;
+  margin: 0;
+  width: 100px;
+  height: 100px;
+}
+
+.avoidAlways {
+  page-break-before: always;
+}
+
+.preWrap {
+  white-space: pre-line;
+  word-break: break-word;
+}
+
+.textJustify {
+  text-align: justify !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+strong {
+  font-weight: 700;
+}
+
+<% if (onepage) { %>
+html, body {
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: -0.1px;
+  font-weight: 300;
+}
+.pdf {
+  width: 100%;
+}
+.pdf > header {
+  font-family: "Raleway", sans-serif;
+}
+.pdf main .users .user--more img {
+  /* bottom: 74px; */
+}
+.robotoFont {
+  font-weight: 300;
+}
+<% } %>
+
+/*# sourceMappingURL=style.css.map */
+    </style>
+  </head>
+  <body>
+    <div class="pdf">
+      <header>
+        <div class="name">Ваш финансовый план</div>
+        <div class="description">по итогам курса «Я – Инвестор 2.0»</div>
+        <footer>
+          <div class="description">
+            <div>
+              <div class="circle"></div>
+              <div>Финансовая цель</div>
+            </div>
+            <div>
+              <div class="circle"></div>
+              <div>Портфель от эксперта</div>
+            </div>
+            <div>
+              <div class="circle"></div>
+              <div>Стартовый портфель</div>
+            </div>
+            <div>
+              <div class="circle"></div>
+              <div>Итоговый комментарий</div>
+            </div>
+            <div>
+              <div class="circle"></div>
+              <div>Портфель на сумму цели</div>
+            </div>
+            <div>
+              <div class="circle"></div>
+              <div>График пополнений</div>
+            </div>
+          </div>
+          <div class="logo">
+            <div class="title">Pro.Finansy</div>
+            <div class="text">Академия создания капитала</div>
+          </div>
+        </footer>
+        <img src="<%= header %>" alt="" />
+      </header>
+      <main>
+        <div class="users">
+          <div class="user">
+            <div class="user--title">Обучающийся</div>
+            <div class="user--container">
+              <div class="element">
+                <div></div>
+                <div><%= student.name %></div>
+              </div>
+              <div class="element">
+                <div></div>
+                <div class="robotoFont"><%= student.phone %></div>
+              </div>
+              <div class="element">
+                <div></div>
+                <div><%= student.email %></div>
+              </div>
+              <div class="element">
+                <div class="value">Страна налогового резиденства:</div>
+                <div><%= student.country %></div>
+              </div>
+              <div class="element">
+                <div class="value">Статус госслужащего:</div>
+                <div><%= student.role %></div>
+              </div>
+              <% if (student.role === 'Да') { %>
+                <div class="element">
+                  <div></div>
+                  <div>Вы указали, что являетесь госслужащим. Пожалуйста, ознакомьтесь с файлом «Особенности инвестирования для госслужащих», который мы присылали в чат. С помощью него вы сможете точно определиться, какие у вас есть возможности и ограничения в инвестировании. Посмотрите дополнительно видео Ольги в Инстаграм «Инвестиции для госслужащих» - <a style="color: rgb(0, 89, 255);" href="https://www.instagram.com/p/CKgdcyoj4Nc/" target="_blank">https://www.instagram.com/p/CKgdcyoj4Nc/</a></div>
+                </div>
+              <% } %>
+            </div>
+          </div>
+          <div class="user">
+            <div class="user--title">Проверяющий</div>
+            <div class="user--container expert">
+              <div class="element">
+                <div></div>
+                <div>Эксперт курса «Я - Инвестор 2.0»</div>
+              </div>
+              <div class="element">
+                <div></div>
+                <div><%= expert.name %></div>
+              </div>
+              <div class="element">
+                <div></div>
+                <div><span class="robotoFont"><%= expert.phone %></span> (WhatsApp)</div>
+              </div>
+              <div class="element">
+                <div></div>
+                <div><%= expert.email %></div>
+              </div>
+              <% if (expert.showChat) { %>
+                <div class="element">
+                  <div></div>
+                  <div>
+                    Учебный чат будет снова открыт для обсуждений на <%= expert.dayLength %> <%= days %>:
+                    <br>
+                    <strong><span class="robotoFont robotoFontStrong"><%= expert.days %></span> включительно</strong>
+                  </div>
+                </div>
+                <div class="element">
+                  <div></div>
+                  <div>
+                    Время работы чата: <br><strong class="robotoFont robotoFontStrong"><%= expert.times %></strong> по мск. времени
+                  </div>
+                </div>
+              <% } else { %>
+                <div class="element"></div>
+                <div class="element"></div>
+              <% } %>
+            </div>
+            <div class="user--more">
+              <img src="<%= avatar %>" alt="" />
+              <div class="line"></div>
+            </div>
+          </div>
+        </div>
+        <div class="targets">
+          <header>Финансовая цель</header>
+          <div class="targets--container">
+            <% targets.forEach(target => { %>
+              <div class="target">
+                <div class="target--container">
+                  <div class="element space">
+                    <div>Формулировка цели по SMART:</div>
+                    <div class="preWrap robotoFont"><%= target.name %></div>
+                  </div>
+                  <% if (target.type === 2) { %>
+                    <div class="element space">
+                      <div>Необходимый капитал для пассивного дохода с учетом инфляции:</div>
+                      <div><span class="robotoFont"><%= (target.capital + '').replace(/\B(?=(\d{3})+(?!\d))/g, " ") %></span> <%= target.mainCurrency %></div>
+                    </div>
+                  <% } else { %>
+                    <div class="element space">
+                      <div>Сумма цели с учетом инфляции:</div>
+                      <div class="robotoFont"><%= (target.passive + '').replace(/\B(?=(\d{3})+(?!\d))/g, " ") %> <%= target.mainCurrency %></div>
+                    </div>
+                  <% } %>
+                  <div class="element space">
+                    <div>Срок:</div>
+                    <div><span class="robotoFont"><%= target.term %></span></div>
+                  </div>
+                  <div class="element space">
+                    <div>Имеющиеся ресурсы для достижения цели:</div>
+                    <div><span class="robotoFont"><%= (target.resourses + '').replace(/\B(?=(\d{3})+(?!\d))/g, " ") %></span> <%= target.mainCurrency %></div>
+                  </div>
+                  <div class="element space">
+                    <div>Процент достижения цели:</div>
+                    <div>Цель достигнута на <span class="robotoFont"><%= target.percent %></span>%</div>
+                  </div>
+                  <% if (target.type == 2) { %>
+                    <div class="element space">
+                      <div>Сумма пассивного дохода в месяц с учетом инфляции:</div>
+                      <div><span class="robotoFont"><%= (target.passive + '').replace(/\B(?=(\d{3})+(?!\d))/g, " ") %></span> <%= target.mainCurrency %></div>
+                    </div>
+                  <% } %>
+                  <div class="element space">
+                    <div>Необходимые финансы для достижения цели:</div>
+                    <div><span class="robotoFont"><%= (target.conclusion.amount + '').replace(/\B(?=(\d{3})+(?!\d))/g, " ") %></span> <%= target.mainCurrency %></div>
+                  </div>
+                  <div class="element space">
+                    <div>Периодичность пополнения портфеля:</div>
+                    <div>
+                      В конце отчета для удобства есть график пополнений вашей цели. Вы можете отмечать «галочками» те внесения, которые сделаны. Справа в графике вы можете писать суммы, которые вы уже накопили на счете. 
+                      Пусть ваши финансовые цели будут достигнуты!
+                    </div>
+                  </div>
+                  <div class="element space">
+                    <div>Сумма, которую сейчас посильно вносить:</div>
+                    <% if (target.conclusion.period === 'без пополнений') { %>
+                      <div>Без пополнений</div>
+                    <% } else { %>
+                      <div><span class="robotoFont"><%= (target.conclusion.replenishment + '').replace(/\B(?=(\d{3})+(?!\d))/g, " ") %></span> <%= target.mainCurrency %>/<%= target.conclusion.period %></div>
+                    <% } %>
+                  </div>
+                  <div class="element space">
+                    <div>Риск-профиль:</div>
+                    <div>
+                      <div><%= target.riskPortfolio.name %></div>
+                      <div>
+                        Рекомендуется при <%= target.riskPortfolio.tag %> риск-профиле придерживаться
+                        данного соотношения классов активов:
+                      </div>
+                      <div>
+                        <img src="<%= target.riskPortfolio.icon %>" alt="">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="element">
+                    <div>Комментарий по формированию цели:</div>
+                    <div class="robotoFont"><%- target.conclusion.comment %></div>
+                  </div>
+                </div>
+              </div>
+            <% }) %>
+          </div>
+        </div>
+
+        <% targets.forEach(target => { %>
+          <% target.portfolios.forEach((portfolio, index) => { %>
+            <% if (Number(target.status[portfolio.id]) === 1) { %>
+              <div class="portfolio space <%= portfolio.id %>">
+                <header><%= portfolio.name %></header>
+                <div class="description"><%= portfolio.description %></div>
+                <div class="portfolio--container">
+                  <div class="section">
+                    <div class="section--title" style="margin-bottom: 5px;">Ядро портфеля</div>
+                    <div class="section--container">
+                      <div class="element space" style="position: relative;">
+                        <div>
+                          Текущее соотношение ядра портфеля и тактических идей:
+                        </div>
+                        <div class="chart">
+                          <canvas id="<%= target.number %>myCanvas0<%= index %>"></canvas>
+                          <div id="<%= target.number %>myLegend0<%= index %>" class="legend"></div>
+                        </div>
+                        <div style="font-size: 10px; position: absolute; bottom: 15px; left: 0;">
+                          <div style="font-weight: 700; padding-bottom: 5px; margin: 0;">Сумма портфеля:</div>
+                          <div class="robotoFont" style="font-size: 9px;"><%= portfolio.mainAmount.replace(/\B(?=(\d{3})+(?!\d))/g, " ") %> <%= target.mainCurrency %></div>
+                        </div>
+                      </div>
+                    <% if (portfolio.core.selected) { %>
+                      <div class="title space">Состав портфеля по инструментам:</div>
+                      <% if (portfolio.core.instruments.stock.length > 0) { %>
+                        <div class="table">
+                          <div class="header space">Рисковая часть:</div>
+                          <div style="margin-top: 10px;">
+                            <div style="width: 100%; margin-bottom: 5px;" class="table--header space">
+                              <div style="display: flex; display: -webkit-box; width: 100%;">
+                                <div style="padding-left: 5px; width: 12%; font-size: 7px; vertical-align: top; font-weight: 700;">Тикер/ISIN</div>
+                                <div style="padding-left: 5px; width: 8%; font-size: 7px; vertical-align: top; font-weight: 700;"><%= portfolio.id === 'expert' ? 'Цена текущая' : 'Цена покупки' %></div>
+                                <div style="padding-left: 5px; width: 8%; font-size: 7px; vertical-align: top; font-weight: 700;">Процент</div>
+                                <div style="padding-left: 5px; width: 7%; font-size: 7px; vertical-align: top; font-weight: 700;">Кол-во бумаг</div>
+                                <div style="padding-left: 5px; width: 8%; font-size: 7px; vertical-align: top; font-weight: 700;">Лотность</div>
+                                <div style="padding-left: 5px; width: 9%; font-size: 7px; vertical-align: top; font-weight: 700;">Сумма</div>
+                                <div style="padding-left: 5px; width: 9%; font-size: 7px; vertical-align: top; font-weight: 700;">Валюта покупки</div>
+                                <div style="padding-left: 5px; width: 11%; font-size: 7px; vertical-align: top; font-weight: 700;">Тип инструмента</div>
+                                <div style="padding-left: 5px; width: 12%; font-size: 7px; vertical-align: top; font-weight: 700;">География</div>
+                                <div style="padding-left: 5px; width: 16%; font-size: 7px; vertical-align: top; font-weight: 700;">Сектор экономики</div>
+                              </div>
+                            </div>
+                            <% portfolio.core.instruments.stock.forEach(instrument => { %>
+                              <div class="table--container">
+                                <div style="display: flex; display: -webkit-box; background-color: rgb(230, 230, 230);" class="space">
+                                  <div style="width: 12%; font-size: 7px; vertical-align: top; padding: 5px 0 5px 5px;" class="robotoFont"><%= instrument.name %></div>
+                                  <div style="width: 8%; font-size: 7px; vertical-align: top; padding: 5px 0 5px 5px;" class="robotoFont"><%= Number(instrument.price).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, " ") %></div>
+                                  <div style="width: 8%; font-size: 7px; vertical-align: top; padding: 5px 0 5px 5px;" class="robotoFont"><%= instrument.percent %></div>
+                                  <div style="width: 7%; font-size: 7px; vertical-align: top; padding: 5px 0 5px 5px;" class="robotoFont"><%= (instrument.number_papers + '').replace(/\B(?=(\d{3})+(?!\d))/g, " ") %></div>
+                                  <div style="width: 8%; font-size: 7px; vertical-align: top; padding: 5px 0 5px 5px;" class="robotoFont"><%= instrument.lot || 1 %></div>
+                                  <div style="width: 9%; font-size: 7px; vertical-align: top; padding: 5px 0 5px 5px;" class="robotoFont"><%= (instrument.price * instrument.number_papers * (instrument.lot || 1)).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, " ") %></div>
+                                  <div style="width: 9%; font-size: 7px; vertical-align: top; padding: 5px 0 5px 5px;"><%= instrument.currency_two  %></div>
+                                  <div style="width: 11%; font-size: 7px; vertical-align: top; padding: 5px 0 5px 5px;"><%= instrument.instrument_type_two %></div>
+                                  <div style="width: 12%; font-size: 7px; vertical-align: top; padding: 5px 0 5px 5px; word-break: break-all;"><%= instrument.country_two  %></div>
+                                  <div style="width: 16%; font-size: 7px; vertical-align: top; padding: 5px; word-break: break-all;"><%= instrument.section_two %></div>
+                                </div>
+                              </div>
+                              <% if (instrument.comment) { %>
+                                <div class="table--container">
+                                  <div style="display: flex; display: -webkit-box;">
+                                    <div style="font-weight: 600; width: 16%; vertical-align: top; font-size: 8px; padding: 5px 0 0 5px;">
+                                      <div class="space">Комментарий эксперта:</div>
+                                    </div>
+                                    <div style="width: 84%; vertical-align: top; font-size: 8px; line-height: 11px;">
+                                      <div class="robotoFont" style="padding: 5px 0;"><%- instrument.comment %></div>
+                                    </div>
+                                  </div>
+                                </div>
+                              <% } else { %>
+                                <div class="table--container">
+                                  <div>
+                                    <div class="space" style="height: 10px"></div>
+                                  </div>
+                                </div>
+                              <% } %>
+                            <% }) %>
+                          </div>
+                        </div>
+                      <% } %>
+                      <% if (index === 1 && (Object.keys(portfolio.core.stock_risk_percents).length > 0 || Object.keys(portfolio.core.stock_percents).length > 0)) { %>
+                        <div class="charts space">
+                          <% if (Object.keys(portfolio.core.stock_risk_percents).length > 0) { %>
+                            <div class="chart123">
+                              <div class="chart--title">Структура портфеля по рисковой части:</div>
+                              <div class="chart--container">
+                                <canvas id="<%= target.number %>myCanvas8<%= index %>"></canvas>
+                                <div id="<%= target.number %>myLegend8<%= index %>" class="legend"></div>
+                              </div>
+                            </div>
+                          <% } %>
+                          <% if (Object.keys(portfolio.core.stock_percents).length > 0) { %>
+                            <div class="chart123">
+                              <div class="chart--title">Структура акций по секторам экономики:</div>
+                              <div class="chart--container">
+                                <canvas id="<%= target.number %>myCanvas6<%= index %>"></canvas>
+                                <div id="<%= target.number %>myLegend6<%= index %>" class="legend"></div>
+                              </div>
+                            </div>
+                          <% } %>
+                        </div>
+                      <% } %>
+                      <% if (portfolio.comments.stock) { %>
+                        <div class="table">
+                          <div class="header space">Обзор рисковой части</div>
+                          <div class="table--container">
+                            <div style="display: flex; display: -webkit-box;">
+                              <div style="width: 100%; vertical-align: top; font-size: 10px; line-height: 12px;">
+                                <div class="robotoFont" style="padding: 5px 0;"><%- portfolio.comments.stock %></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      <% } %>
+                      <% if (portfolio.core.instruments.bond.length > 0) { %>
+                        <div class="table">
+                          <div class="header space">Консервативная часть:</div>
+                          <div style="margin-top: 10px;">
+                            <div style="width: 100%; margin-bottom: 5px;" class="table--header space">
+                              <div style="display: flex; display: -webkit-box; width: 100%;">
+                                <div style="padding-left: 5px; width: 14%; font-size: 7px; vertical-align: top; font-weight: 700;">Тикер/ISIN</div>
+                                <div style="padding-left: 5px; width: 10%; font-size: 7px; vertical-align: top; font-weight: 700;"><%= portfolio.id === 'expert' ? 'Цена текущая' : 'Цена покупки' %></div>
+                                <div style="padding-left: 5px; width: 8%; font-size: 7px; vertical-align: top; font-weight: 700;">Процент</div>
+                                <div style="padding-left: 5px; width: 8%; font-size: 7px; vertical-align: top; font-weight: 700;">Кол-во бумаг</div>
+                                <div style="padding-left: 5px; width: 10%; font-size: 7px; vertical-align: top; font-weight: 700;">Лотность</div>
+                                <div style="padding-left: 5px; width: 10%; font-size: 7px; vertical-align: top; font-weight: 700;">Сумма</div>
+                                <div style="padding-left: 5px; width: 10%; font-size: 7px; vertical-align: top; font-weight: 700;">Валюта покупки</div>
+                                <div style="padding-left: 5px; width: 15%; font-size: 7px; vertical-align: top; font-weight: 700;">Тип инструмента</div>
+                                <div style="padding-left: 5px; width: 15%; font-size: 7px; vertical-align: top; font-weight: 700;">География</div>
+                              </div>
+                            </div>
+                            <% portfolio.core.instruments.bond.forEach(instrument => { %>
+                              <div class="table--container">
+                                <div style="display: flex; display: -webkit-box; background-color: rgb(230, 230, 230);" class="space">
+                                  <div style="width: 14%; font-size: 7px; vertical-align: top; padding: 5px 0 5px 5px;" class="robotoFont"><%= instrument.name %></div>
+                                  <div style="width: 10%; font-size: 7px; vertical-align: top; padding: 5px 0 5px 5px;" class="robotoFont"><%= Number(instrument.price).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, " ") %></div>
+                                  <div style="width: 8%; font-size: 7px; vertical-align: top; padding: 5px 0 5px 5px;" class="robotoFont"><%= instrument.percent %></div>
+                                  <div style="width: 8%; font-size: 7px; vertical-align: top; padding: 5px 0 5px 5px;" class="robotoFont"><%= (instrument.number_papers + '').replace(/\B(?=(\d{3})+(?!\d))/g, " ") %></div>
+                                  <div style="width: 10%; font-size: 7px; vertical-align: top; padding: 5px 0 5px 5px;" class="robotoFont"><%= instrument.lot || 1 %></div>
+                                  <div style="width: 10%; font-size: 7px; vertical-align: top; padding: 5px 0 5px 5px;" class="robotoFont"><%= (instrument.price * instrument.number_papers * (instrument.lot || 1)).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, " ") %></div>
+                                  <div style="width: 10%; font-size: 7px; vertical-align: top; padding: 5px 0 5px 5px;"><%= instrument.currency_two  %></div>
+                                  <div style="width: 15%; font-size: 7px; vertical-align: top; padding: 5px 0 5px 5px;"><%= instrument.instrument_type_two %></div>
+                                  <div style="width: 15%; font-size: 7px; vertical-align: top; padding: 5px 0 5px 5px; word-break: break-all;"><%= instrument.country_two  %></div>
+                                </div>
+                              </div>
+                              <% if (instrument.comment) { %>
+                                <div class="table--container">
+                                  <div style="display: flex; display: -webkit-box;">
+                                    <div style="font-weight: 600; width: 16%; vertical-align: top; font-size: 8px; padding: 5px 0 0 5px;">
+                                      <div class="space">Комментарий эксперта:</div>
+                                    </div>
+                                    <div style="width: 84%; vertical-align: top; font-size: 8px; line-height: 11px;">
+                                      <div class="robotoFont" style="padding: 5px 0;"><%- instrument.comment %></div>
+                                    </div>
+                                  </div>
+                                </div>
+                              <% } else { %>
+                                <div class="table--container">
+                                  <div>
+                                    <div class="space" style="height: 10px"></div>
+                                  </div>
+                                </div>
+                              <% } %>
+                            <% }) %>
+                          </div>
+                        </div>
+                      <% } %>
+                      <% if (index === 1 && (Object.keys(portfolio.core.conserv_percents).length > 0 || Object.keys(portfolio.core.bond_period_percents).length > 0)) { %>
+                        <div class="charts space">
+                          <% if (Object.keys(portfolio.core.conserv_percents).length > 0) { %>
+                            <div class="chart123">
+                              <div class="chart--title">Структура портфеля по консервативной части</div>
+                              <div class="chart--container">
+                                <canvas id="<%= target.number %>myCanvas5<%= index %>"></canvas>
+                                <div id="<%= target.number %>myLegend5<%= index %>" class="legend"></div>
+                              </div>
+                            </div>
+                          <% } %>
+                          <% if (Object.keys(portfolio.core.bond_period_percents).length > 0) { %>
+                            <div class="chart123">
+                              <div class="chart--title">Структура облигаций по срокам:</div>
+                              <div class="chart--container">
+                                <canvas id="<%= target.number %>myCanvas7<%= index %>"></canvas>
+                                <div id="<%= target.number %>myLegend7<%= index %>" class="legend"></div>
+                              </div>
+                            </div>
+                          <% } %>
+                        </div>
+                      <% } %>
+                      <% if (portfolio.comments.bond) { %>
+                        <div class="table">
+                          <div class="header space">Обзор консервативной части</div>
+                          <div class="table--container">
+                            <div style="display: flex; display: -webkit-box;">
+                              <div style="width: 100%; vertical-align: top; font-size: 10px; line-height: 12px;">
+                                <div class="robotoFont" style="padding: 5px 0;"><%- portfolio.comments.bond %></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      <% } %>
+                      <% if (portfolio.core.instruments.alternative.length > 0) { %>
+                        <div class="table">
+                          <div class="header space">Защитная часть:</div>
+                          <div style="margin-top: 10px;">
+                            <div style="width: 100%; margin-bottom: 5px;" class="table--header space">
+                              <div style="display: flex; display: -webkit-box; width: 100%;">
+                                <div style="padding-left: 5px; width: 12%; font-size: 7px; vertical-align: top; font-weight: 700;">Тикер/ISIN</div>
+                                <div style="padding-left: 5px; width: 8%; font-size: 7px; vertical-align: top; font-weight: 700;"><%= portfolio.id === 'expert' ? 'Цена текущая' : 'Цена покупки' %></div>
+                                <div style="padding-left: 5px; width: 8%; font-size: 7px; vertical-align: top; font-weight: 700;">Процент</div>
+                                <div style="padding-left: 5px; width: 7%; font-size: 7px; vertical-align: top; font-weight: 700;">Кол-во бумаг</div>
+                                <div style="padding-left: 5px; width: 8%; font-size: 7px; vertical-align: top; font-weight: 700;">Лотность</div>
+                                <div style="padding-left: 5px; width: 9%; font-size: 7px; vertical-align: top; font-weight: 700;">Сумма</div>
+                                <div style="padding-left: 5px; width: 9%; font-size: 7px; vertical-align: top; font-weight: 700;">Валюта покупки</div>
+                                <div style="padding-left: 5px; width: 11%; font-size: 7px; vertical-align: top; font-weight: 700;">Тип инструмента</div>
+                                <div style="padding-left: 5px; width: 12%; font-size: 7px; vertical-align: top; font-weight: 700;">География</div>
+                                <div style="padding-left: 5px; width: 16%; font-size: 7px; vertical-align: top; font-weight: 700;">Сектор экономики</div>
+                              </div>
+                            </div>
+                            <% portfolio.core.instruments.alternative.forEach(instrument => { %>
+                              <div class="table--container">
+                                <div style="display: flex; display: -webkit-box; background-color: rgb(230, 230, 230);" class="space">
+                                  <div style="width: 12%; font-size: 7px; vertical-align: top; padding: 5px 0 5px 5px;" class="robotoFont"><%= instrument.name %></div>
+                                  <div style="width: 8%; font-size: 7px; vertical-align: top; padding: 5px 0 5px 5px;" class="robotoFont"><%= Number(instrument.price).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, " ") %></div>
+                                  <div style="width: 8%; font-size: 7px; vertical-align: top; padding: 5px 0 5px 5px;" class="robotoFont"><%= instrument.percent %></div>
+                                  <div style="width: 7%; font-size: 7px; vertical-align: top; padding: 5px 0 5px 5px;" class="robotoFont"><%= (instrument.number_papers + '').replace(/\B(?=(\d{3})+(?!\d))/g, " ") %></div>
+                                  <div style="width: 8%; font-size: 7px; vertical-align: top; padding: 5px 0 5px 5px;" class="robotoFont"><%= instrument.lot || 1 %></div>
+                                  <div style="width: 9%; font-size: 7px; vertical-align: top; padding: 5px 0 5px 5px;" class="robotoFont"><%= (instrument.price * instrument.number_papers * (instrument.lot || 1)).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, " ") %></div>
+                                  <div style="width: 9%; font-size: 7px; vertical-align: top; padding: 5px 0 5px 5px;"><%= instrument.currency_two  %></div>
+                                  <div style="width: 11%; font-size: 7px; vertical-align: top; padding: 5px 0 5px 5px;"><%= instrument.instrument_type_two %></div>
+                                  <div style="width: 12%; font-size: 7px; vertical-align: top; padding: 5px 0 5px 5px; word-break: break-all;"><%= instrument.country_two  %></div>
+                                  <div style="width: 16%; font-size: 7px; vertical-align: top; padding: 5px; word-break: break-all;"><%= instrument.section_two %></div>
+                                </div>
+                              </div>
+                              <% if (instrument.comment) { %>
+                                <div class="table--container">
+                                  <div style="display: flex; display: -webkit-box;">
+                                    <div style="font-weight: 600; width: 16%; vertical-align: top; font-size: 8px; padding: 5px 0 0 5px;">
+                                      <div class="space">Комментарий эксперта:</div>
+                                    </div>
+                                    <div style="width: 84%; vertical-align: top; font-size: 8px; line-height: 11px;">
+                                      <div class="robotoFont" style="padding: 5px 0;"><%- instrument.comment %></div>
+                                    </div>
+                                  </div>
+                                </div>
+                              <% } else { %>
+                                <div class="table--container">
+                                  <div>
+                                    <div class="space" style="height: 10px"></div>
+                                  </div>
+                                </div>
+                              <% } %>
+                            <% }) %>
+                          </div>
+                        </div>
+                      <% } %>
+                      <% if (portfolio.comments.alternative) { %>
+                        <div class="table">
+                          <div class="header space">Обзор защитной части</div>
+                          <div class="table--container">
+                            <div style="display: flex; display: -webkit-box;">
+                              <div style="width: 100%; vertical-align: top; font-size: 10px; line-height: 12px;">
+                                <div class="robotoFont" style="padding: 5px 0;"><%- portfolio.comments.alternative %></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      <% } %>
+                      <% if (Object.keys(portfolio.core.class_percents).length > 0 || Object.keys(portfolio.core.country_percents).length > 0) { %>
+                        <div class="charts space">
+                          <% if (Object.keys(portfolio.core.class_percents).length > 0) { %>
+                            <div class="chart123">
+                              <div class="chart--title">Структура портфеля по классам активов:</div>
+                              <div class="chart--container">
+                                <canvas id="<%= target.number %>myCanvas1<%= index %>"></canvas>
+                                <div id="<%= target.number %>myLegend1<%= index %>" class="legend"></div>
+                              </div>
+                            </div>
+                          <% } %>
+                          <% if (Object.keys(portfolio.core.country_percents).length > 0) { %>
+                            <div class="chart123">
+                              <div class="chart--title">Структура портфеля по географии:</div>
+                              <div class="chart--container">
+                                <canvas id="<%= target.number %>myCanvas2<%= index %>"></canvas>
+                                <div id="<%= target.number %>myLegend2<%= index %>" class="legend"></div>
+                              </div>
+                            </div>
+                          <% } %>
+                        </div>
+                      <% } %>
+                      <% if (Object.keys(portfolio.core.currency_percents).length > 0 || (Object.keys(portfolio.core.conserv_percents).length > 0 && index === 2)) { %>
+                        <div class="charts space">
+                          <% if (Object.keys(portfolio.core.currency_percents).length > 0) { %>
+                            <div class="chart123">
+                              <div class="chart--title">Структура портфеля по валюте:</div>
+                              <div class="chart--container">
+                                <canvas id="<%= target.number %>myCanvas3<%= index %>"></canvas>
+                                <div id="<%= target.number %>myLegend3<%= index %>" class="legend"></div>
+                              </div>
+                            </div>
+                          <% } %>
+                          <% if (Object.keys(portfolio.core.conserv_percents).length > 0 && index === 2) { %>
+                            <div class="chart123">
+                              <div class="chart--title">Структура портфеля по консервативной части</div>
+                              <div class="chart--container">
+                                <canvas id="<%= target.number %>myCanvas5<%= index %>"></canvas>
+                                <div id="<%= target.number %>myLegend5<%= index %>" class="legend"></div>
+                              </div>
+                            </div>
+                          <% } %>
+                        </div>
+                      <% } %>
+                      <% if ((Object.keys(portfolio.core.section_percents).length > 0 && index === 2) || (Object.keys(portfolio.core.stock_percents).length > 0 && index === 2)) { %>
+                        <div class="charts space">
+                          <% if (Object.keys(portfolio.core.section_percents).length > 0 && index === 2) { %>
+                            <div class="chart123">
+                              <div class="chart--title">Структура портфеля по секторам экономики:</div>
+                              <div class="chart--container">
+                                <canvas id="<%= target.number %>myCanvas4<%= index %>"></canvas>
+                                <div id="<%= target.number %>myLegend4<%= index %>" class="legend"></div>
+                              </div>
+                            </div>
+                          <% } %>
+                          <% if (Object.keys(portfolio.core.stock_percents).length > 0 && index === 2) { %>
+                            <div class="chart123">
+                              <div class="chart--title">Структура акций по секторам экономики:</div>
+                              <div class="chart--container">
+                                <canvas id="<%= target.number %>myCanvas6<%= index %>"></canvas>
+                                <div id="<%= target.number %>myLegend6<%= index %>" class="legend"></div>
+                              </div>
+                            </div>
+                          <% } %>
+                        </div>
+                      <% } %>
+                      <% if (Object.keys(portfolio.core.bond_period_percents).length > 0 && index === 2) { %>
+                        <div class="charts space">
+                          <div class="chart123">
+                            <div class="chart--title">Структура облигаций по срокам:</div>
+                            <div class="chart--container">
+                              <canvas id="<%= target.number %>myCanvas7<%= index %>"></canvas>
+                              <div id="<%= target.number %>myLegend7<%= index %>" class="legend"></div>
+                            </div>
+                          </div>
+                        </div>
+                      <% } %>
+                    </div>
+                    <% } %>
+                    <% if (portfolio.tactic.selected) { %>
+                      <div class="table">
+                        <div class="header space">Тактические идеи:</div>
+                        <div style="margin-top: 10px;">
+                          <div style="width: 100%; margin-bottom: 5px;" class="table--header space">
+                            <div style="display: flex; display: -webkit-box; width: 100%;">
+                              <div style="padding-left: 5px; width: 12%; font-size: 7px; vertical-align: top; font-weight: 700;">Тикер/ISIN</div>
+                              <div style="padding-left: 5px; width: 8%; font-size: 7px; vertical-align: top; font-weight: 700;"><%= portfolio.id === 'expert' ? 'Цена текущая' : 'Цена покупки' %></div>
+                              <div style="padding-left: 5px; width: 7%; font-size: 7px; vertical-align: top; font-weight: 700;">Кол-во бумаг</div>
+                              <div style="padding-left: 5px; width: 8%; font-size: 7px; vertical-align: top; font-weight: 700;">Лотность</div>
+                              <div style="padding-left: 5px; width: 9%; font-size: 7px; vertical-align: top; font-weight: 700;">Сумма</div>
+                              <div style="padding-left: 5px; width: 9%; font-size: 7px; vertical-align: top; font-weight: 700;">Валюта покупки</div>
+                              <div style="padding-left: 5px; width: 10%; font-size: 7px; vertical-align: top; font-weight: 700;">Тип инструмента</div>
+                              <div style="padding-left: 5px; width: 12%; font-size: 7px; vertical-align: top; font-weight: 700;">Класс актива</div>
+                              <div style="padding-left: 5px; width: 9%; font-size: 7px; vertical-align: top; font-weight: 700;">География</div>
+                              <% if (portfolio.tactic.entryPoints) { %>
+                                <div style="padding-left: 5px; width: 8%; font-size: 7px; vertical-align: top; font-weight: 700;">Точка входа</div>
+                              <% } %>
+                              <% if (portfolio.tactic.exitPoints) { %>
+                                <div style="padding-left: 5px; width: 8%; font-size: 7px; vertical-align: top; font-weight: 700;">Точка выхода</div>
+                              <% } %>
+                            </div>
+                          </div>
+                          <% portfolio.tactic.instruments.forEach(instrument => { %>
+                            <div class="table--container">
+                              <div style="display: flex; display: -webkit-box; background-color: rgb(230, 230, 230);" class="space">
+                                <div style="width: 12%; font-size: 7px; vertical-align: top; padding: 5px 0 5px 5px;" class="robotoFont"><%= instrument.name %></div>
+                                <div style="width: 8%; font-size: 7px; vertical-align: top; padding: 5px 0 5px 5px;" class="robotoFont"><%= Number(instrument.price).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, " ") %></div>
+                                <div style="width: 7%; font-size: 7px; vertical-align: top; padding: 5px 0 5px 5px;" class="robotoFont"><%= (instrument.number_papers + '').replace(/\B(?=(\d{3})+(?!\d))/g, " ") %></div>
+                                <div style="width: 8%; font-size: 7px; vertical-align: top; padding: 5px 0 5px 5px;" class="robotoFont"><%= instrument.lot || 1 %></div>
+                                <div style="width: 9%; font-size: 7px; vertical-align: top; padding: 5px 0 5px 5px;" class="robotoFont"><%= (instrument.price * instrument.number_papers * (instrument.lot || 1)).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, " ") %></div>
+                                <div style="width: 9%; font-size: 7px; vertical-align: top; padding: 5px 0 5px 5px;"><%= instrument.currency_two  %></div>
+                                <div style="width: 10%; font-size: 7px; vertical-align: top; padding: 5px 0 5px 5px;"><%= instrument.instrument_type_two %></div>
+                                <div style="width: 12%; font-size: 7px; vertical-align: top; padding: 5px 0 5px 5px;"><%= instrument.class_two %></div>
+                                <div style="width: 9%; font-size: 7px; vertical-align: top; padding: 5px 0 5px 5px; word-break: break-all;"><%= instrument.country_two  %></div>
+                                <% if (instrument.entryPoint) { %>
+                                  <div style="width: 8%; font-size: 7px; vertical-align: top; padding: 5px 0 5px 5px;"><%= instrument.entryPoint %></div>
+                                <% } else { %>
+                                  <div></div>
+                                <% } %>
+                                <% if (instrument.exitPoint) { %>
+                                  <div style="width: 8%; font-size: 7px; vertical-align: top; padding: 5px 0 5px 5px;"><%= instrument.exitPoint %></div>
+                                <% } else { %>
+                                  <div></div>
+                                <% } %>
+                              </div>
+                            </div>
+                            <% if (instrument.comment) { %>
+                              <div class="table--container">
+                                <div style="display: flex; display: -webkit-box;">
+                                  <div style="font-weight: 600; width: 16%; vertical-align: top; font-size: 8px; padding: 5px 0 0 5px;">
+                                    <div class="space">Комментарий эксперта:</div>
+                                  </div>
+                                  <div style="width: 84%; vertical-align: top; font-size: 8px; line-height: 11px;">
+                                    <div class="robotoFont" style="padding: 5px 0;"><%- instrument.comment %></div>
+                                  </div>
+                                </div>
+                              </div>
+                            <% } else { %>
+                              <div class="table--container">
+                                <div>
+                                  <div class="space" style="height: 10px"></div>
+                                </div>
+                              </div>
+                            <% } %>
+                          <% }) %>
+                        </div>
+                      </div>
+                    <% } %>
+                    <% if (portfolio.comments.tactic) { %>
+                      <div class="table">
+                        <div class="header space">Обзор тактических идей</div>
+                        <div class="table--container">
+                          <div style="display: flex; display: -webkit-box;">
+                            <div style="width: 100%; vertical-align: top; font-size: 10px; line-height: 12px;">
+                              <div class="robotoFont" style="padding: 5px 0;"><%- portfolio.comments.tactic %></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    <% } %>
+                    <% if (portfolio.comments.common) { %>
+                      <div class="table">
+                        <div class="header space">Комментарий эксперта</div>
+                        <div class="table--container">
+                          <div style="display: flex; display: -webkit-box;">
+                            <div style="width: 100%; vertical-align: top; font-size: 10px; line-height: 12px;">
+                              <div class="robotoFont" style="padding: 5px 0;"><%- portfolio.comments.common %></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    <% } %>
+                  </div>
+                </div>
+              </div>
+            <% } %>
+          <% }) %>
+        <% }) %>
+        <div class="comment space">
+          <header>Итоговый комментарий эксперта</header>
+          <div>
+            <div style="display: flex; display: -webkit-box; margin: 25px 19px 0; padding: 15px; border: 1px dashed #FFCC00; border-radius: 15px;">
+              <div style="width: 100%; vertical-align: top; font-size: 10px; line-height: 14px;">
+                <div class="robotoFont" style="padding: 5px 0;"><%- comment %></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% targets.forEach(target => { %>
+          <% if (target.chart.length > 0) { %>
+            <div class="chart space">
+              <header>График пополнений:</header>
+              <div class="chart--container">
+                <div class="content">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th></th>
+                        <th style="text-align: left; width: 28%;">Дата пополнения</th>
+                        <th style="text-align: left; width: 24%;">Реком. сумма пополнений</th>
+                        <th style="text-align: left; width: 24%;">Факт. сумма пополнений</th>
+                        <th style="text-align: left; width: 24%;">Накопленная сумма на счете</th>
+                      </tr>
+                    </thead>
+                    <% target.chart.forEach(element => { %>
+                    <tbody class="space">
+                      <tr>
+                        <td>
+                          <div style="width: 10px; height: 10px; border: 1px solid rgb(83, 83, 83);"></div>
+                        </td>
+                        <td style="text-align: left; padding-left: 0; font-size: 8px;" class="robotoFont"><%= element.date %></td>
+                        <td style="text-align: left; padding-left: 0; font-size: 8px;" class="robotoFont"><%= element.amount %> <%= element.sign %></td>
+                        <td style="text-align: left; padding-left: 0; font-size: 8px;" class="robotoFont">_______________________</td>
+                        <td style="text-align: left; padding-left: 0; font-size: 8px;" class="robotoFont">_______________________</td>
+                      </tr>
+                    </tbody>
+                    <% }) %>
+                  </table>
+                </div>
+              </div>
+            </div>
+          <% } %>
+        <% }) %>
+        <% if (!onepage) { %>
+          <div class="info avoidAlways">
+            <header>Юридическая информация</header>
+            <div class="info--container">
+              <div class="content">
+                <div class="content--container">
+                  <% info.forEach(element => { %>
+                    <div class="el">
+                      <div><%= element %></div>
+                    </div>
+                  <% }) %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% } else { %>
+          <div class="info">
+            <header>Юридическая информация</header>
+            <div class="info--container">
+              <div class="content">
+                <div class="content--container">
+                  <% info.forEach(element => { %>
+                    <div class="el">
+                      <div><%= element %></div>
+                    </div>
+                  <% }) %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% } %>
+      </main>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"></script>
+    <script>
+      function createSpaces() {
+        var page = 1;
+        var height = 802;
+        $('.space').toArray().forEach(function(element, index) {
+          while ($(element).offset().top / (height * page) > 1) {
+            page += 1;
+          }
+          if (height * page > $(element).offset().top && height * page < $(element).offset().top + $(element).outerHeight(true)) {
+            if (!$(element).hasClass('portfolio')) $(element).css({'background': 'blue'});
+            // TODO: Попробовать с + 2пкс
+            // if ($(element).offset().top < height * page - 32) {
+            //   $(element).css({ 'padding-top': 0, 'margin-top': 0 });
+            //   $($('.space').toArray()[index - 1]).css({ 'padding-bottom': 0, 'margin-bottom': 0 });
+            //   $(element).before('<div class="empty ' + index + '" style="background: lime; padding: 0; margin: 0; width: 100%; height: ' + ((height * page) - $(element).offset().top + 12) + 'px;"></div>');
+            // };
+            if ((height * page) - $(element).offset().top > 780) {
+              page -= 1;
+              var test = $(element).offset().top - (height * page);
+              $(element).before('<div class="empty ' + index + '" style="position:relative; background: tomato; padding: 0; margin: 0; width: 100%; height: ' + test + 'px;"></div>');
+              return;
+            } else if ($(element).html() === 'Комментарий эксперта:' && $(element).prop('tagName') === 'DIV') {
+              $(element).before('<div class="empty" style="width: 100%; background: green; padding: 0; margin: 0; height: ' + ((height * page) - $(element).offset().top) + 'px;"></div>');
+            } else if ($(element).outerHeight(true) === 20 && $(element).hasClass('header') && (height * page) - $(element).offset().top < $(element).outerHeight(true)) {
+              $(element).before('<div class="empty" style="background: lime; padding: 0; margin: 0; width: 100%; height: 20px;"></div>');
+            } else {
+              var top = $(element).offset().top;
+              var length = (height * page) - $(element).offset().top;
+              $(element).css({ 'padding-top': 0 });
+              // $($('.space').toArray()[index - 1]).css({ 'padding-bottom': 0, 'margin-bottom': 0 });
+              $(element).before('<div class="empty ' + index + '" style="position:relative; background: green; padding: 0; margin: 0; width: 100%; height: ' + ((height * page) - $(element).offset().top + 2) + 'px;"></div>');
+              $('.' + index).html('<span style="position: absolute">'
+              + 'top: ' +
+              + top
+              + 'topAfter: ' +
+              + $(element).offset().top
+              + ' - height: '
+              + height
+              + ' - page: '
+              + page
+              + ' - lengthEmpty: '
+              + length
+              + ' - lengthBlock: '
+              + $(element).outerHeight(true)
+              + '</span>');
+            }
+            // if ($(element).offset().top < (height * page)) {
+            //   $('.' + index).css('height', '');
+            // }
+          }
+        });
+      }
+    </script>
+    <script>
+      WebFont.load({
+        google: {
+          families: ['Raleway:400,500,600,700:latin,cyrillic', 'Montserrat:300,400,700:latin,cyrillic']
+        },
+        active: function() {
+          <% if (!onepage) { %>
+            createSpaces();
+          <% } else { %>
+            $('.pdf').attr('data-height', $('.pdf').height());
+          <% } %>
+        }
+      });
+    </script>
+    <script>
+      function create(w, t, d, i, colors) {
+        var myLegend = document.getElementById(w + i);
+        var myCanvas = document.getElementById(t + i);
+        if (!myLegend || !myCanvas) return;
+        myCanvas.width = 300;
+        myCanvas.height = 300;
+        var myVinyls = d;
+
+        var ctx = myCanvas.getContext("2d");
+        function drawPieSlice(
+          ctx,
+          centerX,
+          centerY,
+          radius,
+          startAngle,
+          endAngle,
+          color
+        ) {
+          ctx.fillStyle = color;
+          ctx.beginPath();
+          ctx.moveTo(centerX, centerY);
+          ctx.arc(centerX, centerY, radius, startAngle, endAngle);
+          ctx.closePath();
+          ctx.fill();
+        }
+        var Piechart = function (options) {
+          this.options = options;
+          this.canvas = options.canvas;
+          this.ctx = this.canvas.getContext("2d");
+          this.colors = options.colors;
+
+          this.draw = function () {
+            var total_value = 0;
+            var color_index = 0;
+            for (var categ in this.options.data) {
+              var val = Number(this.options.data[categ]);
+              total_value += val;
+            }
+
+            var start_angle = 0;
+            for (categ in this.options.data) {
+              val = Number(this.options.data[categ]);
+              var slice_angle = (2 * Math.PI * val) / total_value;
+
+              drawPieSlice(
+                this.ctx,
+                this.canvas.width / 2,
+                this.canvas.height / 2,
+                Math.min(this.canvas.width / 2, this.canvas.height / 2),
+                start_angle,
+                start_angle + slice_angle,
+                this.colors[color_index % this.colors.length]
+              );
+
+              start_angle += slice_angle;
+              color_index++;
+            }
+
+            if (this.options.doughnutHoleSize) {
+              drawPieSlice(
+                this.ctx,
+                this.canvas.width / 2,
+                this.canvas.height / 2,
+                this.options.doughnutHoleSize *
+                  Math.min(this.canvas.width / 2, this.canvas.height / 2),
+                0,
+                2 * Math.PI,
+                "#ff0000"
+              );
+            }
+            start_angle = 0;
+            for (categ in this.options.data) {
+              val = Number(this.options.data[categ]);
+              slice_angle = (2 * Math.PI * val) / total_value;
+              var pieRadius = Math.min(
+                this.canvas.width / 2,
+                this.canvas.height / 2
+              );
+              var labelX =
+                this.canvas.width / 2 +
+                (pieRadius / 2) * Math.cos(start_angle + slice_angle / 2) -
+                10;
+              var labelY =
+                this.canvas.height / 2 +
+                (pieRadius / 2) * Math.sin(start_angle + slice_angle / 2) +
+                5;
+
+              if (this.options.doughnutHoleSize) {
+                var offset = (pieRadius * this.options.doughnutHoleSize) / 2;
+                labelX =
+                  this.canvas.width / 2 +
+                  (offset + pieRadius / 2) *
+                    Math.cos(start_angle + slice_angle / 2);
+                labelY =
+                  this.canvas.height / 2 +
+                  (offset + pieRadius / 2) *
+                    Math.sin(start_angle + slice_angle / 2);
+              }
+
+              start_angle += slice_angle;
+            }
+            if (this.options.legend) {
+              color_index = 0;
+              var legendHTML = "";
+              for (categ in this.options.data) {
+                if (colors.length === 2) {
+                  legendHTML +=
+                    "<div style='margin-bottom: 5px;'><span style='display:inline-block;position:relative;top:-2px;margin-right:5px;width:12px;height:12px;border-radius:50%;background-color:" +
+                    this.colors[color_index++] +
+                    ";'>&nbsp;</span> " +
+                    categ +
+                    " <span class=\"robotoFont\">" +
+                    this.options.data[categ] +
+                    "</span>%</div>";
+                } else {
+                  legendHTML +=
+                    "<div style='display: flex; display: -webkit-box; align-items: center; margin-bottom: 5px; max-width: 100%; vertical-align: top; margin-right: 10px; justify-content: flex-start; text-align: left;'><div style='text-align: left; margin-right: 5px; min-width: 8px; width: 8px; height: 8px; border-radius: 50%; background-color:" +
+                    this.colors[color_index++] +
+                    ";'>&nbsp;</div> <div style=''>" +
+                    categ +
+                    " <span class=\"robotoFont\" style=\"text-align: left;\">" +
+                    this.options.data[categ] +
+                    "</span>%</div></div>";
+                }
+              }
+              this.options.legend.innerHTML = legendHTML;
+            }
+          };
+        };
+        var myPiechart = new Piechart({
+          canvas: myCanvas,
+          data: myVinyls,
+          colors: colors,
+          legend: myLegend,
+        });
+        myPiechart.draw();
+      };
+    </script>
+    <% targets.forEach(target => { %>
+      <% target.portfolios.forEach((portfolio, index) => { %>
+        <% if (target.status[portfolio.id]) { %>
+          <script>
+            var colors = ["#FFE27A", "#B5C465", "#74A25A", "#3B7E51", "#8771A3", "#654978", "#00A7A7", "#008D8D", "#006A6A", "#DE32E5", "#A4E51C", "#787EFF", "#50AA9B", "#FF7886"];
+            var test0 = <%- JSON.stringify(portfolio.ct_percents) %>;
+            var test1 = <%- JSON.stringify(portfolio.core.class_percents) %>;
+            var test2 = <%- JSON.stringify(portfolio.core.country_percents) %>;
+            var test3 = <%- JSON.stringify(portfolio.core.currency_percents) %>;
+            var test4 = <%- JSON.stringify(portfolio.core.section_percents) %>;
+            var test5 = <%- JSON.stringify(portfolio.core.conserv_percents) %>;
+            var test6 = <%- JSON.stringify(portfolio.core.stock_percents) %>;
+            var test7 = <%- JSON.stringify(portfolio.core.bond_period_percents) %>;
+            var test8 = <%- JSON.stringify(portfolio.core.stock_risk_percents) %>;
+            var index = <%- JSON.stringify(index) %>;
+            var number = <%- JSON.stringify(target.number) %>;
+
+            create(number + "myLegend0", number + "myCanvas0", test0, index, colors);
+            create(number + "myLegend1", number + "myCanvas1", test1, index, colors);
+            create(number + "myLegend2", number + "myCanvas2", test2, index, colors);
+            create(number + "myLegend3", number + "myCanvas3", test3, index, colors);
+            create(number + "myLegend4", number + "myCanvas4", test4, index, colors);
+            create(number + "myLegend5", number + "myCanvas5", test5, index, colors);
+            create(number + "myLegend6", number + "myCanvas6", test6, index, colors);
+            create(number + "myLegend7", number + "myCanvas7", test7, index, colors);
+            create(number + "myLegend8", number + "myCanvas8", test8, index, colors);
+          </script>
+        <% } %>
+      <% }) %>
+    <% }) %>
+  </body>
+</html>
